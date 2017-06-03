@@ -22,7 +22,17 @@ namespace ChickChick
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/angular-material.css",
+                      "~/Content/angular-material.layout-attributes.css",
+                      "~/Content/angular-material.layouts.css",
+                      "~/Content/angular-material.layouts.ie_fixes.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                    "~/Scripts/angular.js",
+                    "~/Scripts/angular-route.js",
+                    "~/app/app.js")
+                .IncludeDirectory("~/app", "*.js", true));
         }
     }
 }

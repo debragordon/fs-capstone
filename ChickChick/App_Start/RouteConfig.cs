@@ -15,7 +15,7 @@ namespace ChickChick
 
             routes.MapRoute(
                 name: "Default",
-                url: "{controller}/{action}/{id}",
+                url: "{*catchall}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
