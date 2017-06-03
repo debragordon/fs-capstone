@@ -26,9 +26,5 @@ $ npm install
 
 Now make sure that your database is up and running.
 
-Then, once this is done, start your regular Node server with this Terminal command:
-
-```sh
-$ npm run start
-```
+Then, once this is done ....... (finish this)
 
