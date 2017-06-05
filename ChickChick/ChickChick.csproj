@@ -241,6 +241,7 @@
     <Compile Include="Controllers\ChickChickController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DAL\AppContext.cs" />
     <Compile Include="DAL\Interfaces\IRoom.cs" />
     <Compile Include="DAL\Interfaces\IStudent.cs" />
     <Compile Include="DAL\Interfaces\IWaitingList.cs" />
@@ -250,6 +251,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706051756428_Round1.cs" />
+    <Compile Include="Migrations\201706051756428_Round1.Designer.cs">
+      <DependentUpon>201706051756428_Round1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051831027_Round2.cs" />
+    <Compile Include="Migrations\201706051831027_Round2.Designer.cs">
+      <DependentUpon>201706051831027_Round2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -381,6 +391,14 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706051756428_Round1.resx">
+      <DependentUpon>201706051756428_Round1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051831027_Round2.resx">
+      <DependentUpon>201706051831027_Round2.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
