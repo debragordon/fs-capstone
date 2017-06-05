@@ -7,34 +7,34 @@ using ChickChick.Models;
 
 namespace ChickChick.DAL.Repos
 {
-    public class StudentRepository : IStudent
+    public class WaitingStudentRepository : IWaitingStudent
     {
-        public void AddNewStudent(Student roomNew)
+        public void AddNewWaitingStudent(WaitingStudent roomNew)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteSingleStudent(int id)
+        public void DeleteSingleWaitingStudent(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void EditStudent(Student rooEdit)
+        public void EditWaitingStudent(WaitingStudent rooEdit)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetAllStudents()
+        public IEnumerable<WaitingStudent> GetAllWaitingStudents()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetAllStudents(int roomId)
+        public IEnumerable<WaitingStudent> GetAllWaitingStudents(int roomId)
         {
             throw new NotImplementedException();
         }
 
-        public Room GetSingleStudent(int id)
+        public Room GetSingleWaitingStudent(int id)
         {
             throw new NotImplementedException();
         }

@@ -7,34 +7,29 @@ using ChickChick.Models;
 
 namespace ChickChick.DAL.Repos
 {
-    public class StudentRepository : IStudent
+    public class RoomRepository : IRoom
     {
-        public void AddNewStudent(Student roomNew)
+        public void AddNewRoom(Room roomNew)
         {
             throw new NotImplementedException();
         }
 
-        public void DeleteSingleStudent(int id)
+        public void DeleteSingleRoom(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void EditStudent(Student rooEdit)
+        public void EditRoom(Room roomEdit)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetAllStudents()
+        public IEnumerable<Room> GetAllRooms()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Student> GetAllStudents(int roomId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Room GetSingleStudent(int id)
+        public Room GetSingleRoom(int id)
         {
             throw new NotImplementedException();
         }

@@ -244,10 +244,10 @@
     <Compile Include="DAL\AppContext.cs" />
     <Compile Include="DAL\Interfaces\IRoom.cs" />
     <Compile Include="DAL\Interfaces\IStudent.cs" />
-    <Compile Include="DAL\Interfaces\IWaitingList.cs" />
-    <Compile Include="DAL\Repos\ClassRepository.cs" />
+    <Compile Include="DAL\Interfaces\IWaitingStudent.cs" />
+    <Compile Include="DAL\Repos\RoomRepository.cs" />
     <Compile Include="DAL\Repos\StudentRepository.cs" />
-    <Compile Include="DAL\Repos\WaitingListRepository.cs" />
+    <Compile Include="DAL\Repos\WaitingStudentRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
