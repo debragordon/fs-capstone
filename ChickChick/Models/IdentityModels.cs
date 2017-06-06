@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Data.Entity;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -20,6 +21,11 @@ namespace ChickChick.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<WaitingStudent> WaitingStudents { get; set; }
+
         public ApplicationDbContext()
             : base("ChickChickApp", throwIfV1Schema: false)
         {

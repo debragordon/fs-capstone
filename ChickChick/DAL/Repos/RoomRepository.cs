@@ -4,34 +4,45 @@ using System.Linq;
 using System.Web;
 using ChickChick.DAL.Interfaces;
 using ChickChick.Models;
+using System.Data.Entity.Migrations;
 
 namespace ChickChick.DAL.Repos
 {
-    public class RoomRepository : IRoom
+    public class RoomRepository : IRoomRepository
     {
+        readonly ApplicationDbContext _context;
+
+        public RoomRepository(ApplicationDbContext connection)
+        {
+            _context = connection;
+        }
+
         public void AddNewRoom(Room roomNew)
         {
-            throw new NotImplementedException();
+            _context.Rooms.Add(roomNew);
+            _context.SaveChanges();
         }
 
         public void DeleteSingleRoom(int id)
         {
-            throw new NotImplementedException();
+            var deleteThis = _context.Rooms.Find(id);
+            _context.Rooms.Remove(deleteThis);
         }
 
         public void EditRoom(Room roomEdit)
         {
-            throw new NotImplementedException();
+            _context.Rooms.AddOrUpdate(roomEdit);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Room> GetAllRooms()
         {
-            throw new NotImplementedException();
+            return _context.Rooms;
         }
 
         public Room GetSingleRoom(int id)
         {
-            throw new NotImplementedException();
+            return _context.Rooms.Find(id);
         }
     }
 }

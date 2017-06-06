@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ChickChick.DAL.Interfaces
 {
-    public interface IWaitingStudent
+    public interface IWaitingStudentRepository
     {
-        void AddNewWaitingStudent(WaitingStudent roomNew);
-        void EditWaitingStudent(WaitingStudent rooEdit);
-        Room GetSingleWaitingStudent(int id);
+        void AddNewWaitingStudent(WaitingStudent waitingStudentNew);
+        void EditWaitingStudent(WaitingStudent waitingStudentEdit);
+        WaitingStudent GetSingleWaitingStudent(int id);
         IEnumerable<WaitingStudent> GetAllWaitingStudents();
         IEnumerable<WaitingStudent> GetAllWaitingStudents(int roomId);
         void DeleteSingleWaitingStudent(int id);

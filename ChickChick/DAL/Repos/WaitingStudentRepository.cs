@@ -4,39 +4,49 @@ using System.Linq;
 using System.Web;
 using ChickChick.DAL.Interfaces;
 using ChickChick.Models;
+using System.Data.Entity.Migrations;
 
 namespace ChickChick.DAL.Repos
 {
-    public class WaitingStudentRepository : IWaitingStudent
+    public class WaitingStudentRepository : IWaitingStudentRepository
     {
-        public void AddNewWaitingStudent(WaitingStudent roomNew)
+        readonly ApplicationDbContext _context;
+
+        public WaitingStudentRepository(ApplicationDbContext connection)
         {
-            throw new NotImplementedException();
+            _context = connection;
+        }
+        public void AddNewWaitingStudent(WaitingStudent waitingStudentNew)
+        {
+            _context.WaitingStudents.Add(waitingStudentNew);
+            _context.SaveChanges();
         }
 
         public void DeleteSingleWaitingStudent(int id)
         {
-            throw new NotImplementedException();
+            var deleteThis = _context.WaitingStudents.Find(id);
+            _context.WaitingStudents.Remove(deleteThis);
         }
 
-        public void EditWaitingStudent(WaitingStudent rooEdit)
+        public void EditWaitingStudent(WaitingStudent waitingStudentEdit)
         {
-            throw new NotImplementedException();
+            _context.WaitingStudents.AddOrUpdate(waitingStudentEdit);
+            _context.SaveChanges();
         }
 
         public IEnumerable<WaitingStudent> GetAllWaitingStudents()
         {
-            throw new NotImplementedException();
+            return _context.WaitingStudents;
         }
 
         public IEnumerable<WaitingStudent> GetAllWaitingStudents(int roomId)
         {
-            throw new NotImplementedException();
+            return _context.WaitingStudents.Where(x => x.Room.Id == roomId);
         }
 
-        public Room GetSingleWaitingStudent(int id)
+        public WaitingStudent GetSingleWaitingStudent(int id)
         {
-            throw new NotImplementedException();
+            return _context.WaitingStudents.Find(id);
         }
     }
 }

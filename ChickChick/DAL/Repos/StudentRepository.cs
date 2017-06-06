@@ -4,24 +4,34 @@ using System.Linq;
 using System.Web;
 using ChickChick.DAL.Interfaces;
 using ChickChick.Models;
+using System.Data.Entity.Migrations;
 
 namespace ChickChick.DAL.Repos
 {
-    public class StudentRepository : IStudent
+    public class StudentRepository : IStudentRepository
     {
-        public void AddNewStudent(Student roomNew)
+        readonly ApplicationDbContext _context;
+
+        public StudentRepository(ApplicationDbContext connection)
         {
-            throw new NotImplementedException();
+            _context = connection;
+        }
+        public void AddNewStudent(Student studentNew)
+        {
+            _context.Students.Add(studentNew);
+            _context.SaveChanges();
         }
 
         public void DeleteSingleStudent(int id)
         {
-            throw new NotImplementedException();
+            var deleteThis = _context.Students.Find(id);
+            _context.Students.Remove(deleteThis);
         }
 
-        public void EditStudent(Student rooEdit)
+        public void EditStudent(Student studentEdit)
         {
-            throw new NotImplementedException();
+            _context.Students.AddOrUpdate(studentEdit);
+            _context.SaveChanges();
         }
 
         public IEnumerable<Student> GetAllStudents()
@@ -31,12 +41,12 @@ namespace ChickChick.DAL.Repos
 
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
-            throw new NotImplementedException();
+            return _context.Students.Where(x => x.Room.Id == roomId);
         }
 
-        public Room GetSingleStudent(int id)
+        public Student GetSingleStudent(int id)
         {
-            throw new NotImplementedException();
+            return _context.Students.Find(id);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ChickChick.DAL.Interfaces
 {
-    public interface IRoom
+    public interface IRoomRepository
     {
         void AddNewRoom(Room roomNew);
         void EditRoom(Room roomEdit);
