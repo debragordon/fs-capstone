@@ -15,7 +15,7 @@
                         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                     return str.join("&");
                 },
-                data: { grant_type: "password", email: $scope.email, password: $scope.password }
+                data: { grant_type: "password", userName: $scope.email, password: $scope.password }
             })
             .then(function (result) {
                 console.log("result", result);
@@ -24,7 +24,7 @@
 
                 $http.defaults.headers.common['Authorization'] = `bearer ${result.data.access_token}`;
 
-                $window.location.assign("/home");
+                $location.path("/home");
             });
     }
 
