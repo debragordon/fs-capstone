@@ -26,7 +26,8 @@ namespace ChickChick
                       "~/Content/angular-material.layout-attributes.css",
                       "~/Content/angular-material.layouts.css",
                       "~/Content/angular-material.layouts.ie_fixes.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css",
+                      "~/Content/Login.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                     "~/Scripts/angular.js",

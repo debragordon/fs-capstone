@@ -1,1 +1,22 @@
-﻿<div>LOGIN</div>
+﻿<div>
+    <hgroup>
+        <h1>ChickChick</h1>
+        <h3>welcome</h3>
+    </hgroup>
+    <form>
+        <div class="group">
+            <input type="text"><span class="highlight" ng-model="email" ng-required></span><span class="bar"></span>
+            <label>Email</label>
+        </div>
+        <div class="group">
+            <input type="password"><span class="highlight" ng-model="password" ng-required></span><span class="bar"></span>
+            <label>Password</label>
+        </div>
+        <button type="button" class="button buttonBlack" ng-click="login()">Login
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+        <a type="button" class="button buttonRed" ng-href="/register">Register
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </a>
+    </form>
+</div>
