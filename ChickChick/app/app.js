@@ -10,7 +10,7 @@ app.run(($rootScope, $location) => {
         var logged = isAuth();
         var appTo;
         if (currRoute.originalPath) {
-            appTo = currRoute.originalPath.indexOf('/login') !== -1;
+            appTo = currRoute.originalPath.indexOf('/login') !== -1 || currRoute.originalPath.indexOf('/register') !== -1;
         }
         if (!appTo && !logged) {
             event.preventDefault();
