@@ -12,6 +12,7 @@ namespace ChickChick.Models
         public int Id { get; set; }
         public string RoomName { get; set; }
         public int OccupancyMax { get; set; }
+        public string Location { get; set; }
         public virtual List<Student> Students { get; set; }
         public virtual List<WaitingStudent> WaitingStudents { get; set; }
     }

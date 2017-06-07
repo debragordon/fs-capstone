@@ -5,18 +5,22 @@
     </hgroup>
     <form>
         <div class="group">
-            <input type="text" ng-model="email" ng-required><span class="highlight"></span><span class="bar"></span>
+            <input type="text" ng-model="newUser.email" ng-required><span class="highlight"></span><span class="bar"></span>
             <label>Email</label>
         </div>
         <div class="group">
-            <input type="password" ng-model="password" ng-required><span class="highlight"></span><span class="bar"></span>
+            <input type="text" ng-model="newUser.location" ng-required><span class="highlight"></span><span class="bar"></span>
+            <label>Childcare Center Location Name</label>
+        </div>
+        <div class="group">
+            <input type="password" ng-model="newUser.password" ng-required><span class="highlight"></span><span class="bar"></span>
             <label>Password</label>
         </div>
         <div class="group">
-            <input type="password" ng-model="passwordConfirm" ng-required><span class="highlight"></span><span class="bar"></span>
+            <input type="password" ng-model="newUser.passwordConfirm" ng-required><span class="highlight"></span><span class="bar"></span>
             <label>Password Confirm</label>
         </div>
-        <button type="button" class="button buttonBlack" ng-click="registerNew()">
+        <button type="button" class="button buttonBlack" ng-click="registerNew(newUser)">
             Register/SignIn
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
         </button>
