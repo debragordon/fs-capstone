@@ -5,7 +5,7 @@
 
         $scope.addRoom = function () {
             $http.post('/api/room', $scope.newRoom)
-                .then(function(res) {
+                .then(function() {
                     $location.path("/classrooms");
                     $scope.newRoom = {};
                 });
