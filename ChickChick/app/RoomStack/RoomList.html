@@ -1,1 +1,28 @@
 ﻿<div>ROOM LIST</div>
+<div>
+    <ul class="demo-list-icon mdl-list" >
+        <li class="mdl-list__item" ng-repeat="room in rooms">
+            <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-icon chart-timeline"></i>
+                {{room.RoomName}}
+            </span>
+            <a type="button" class="button buttonBlack" ng-href="/classrooms/{room.Id}">
+                VIEW
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </a>
+            <a type="button" class="button buttonBlack" ng-click="fillForm(room)">
+                EDIT
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </a>
+            <a type="button" class="button buttonBlack" ng-click="deleteRoom(room.Id)">
+                DELETE
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<a type="button" class="button buttonBlack" ng-href="/classrooms/form">
+    Add New
+    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+</a>

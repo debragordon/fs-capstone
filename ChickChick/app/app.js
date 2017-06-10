@@ -4,7 +4,7 @@ var isAuth = function () {
     return sessionStorage.getItem("token") ? true : false;
 };
 
-app.run(($rootScope, $location) => {
+app.run(($rootScope, $location, $http) => {
 
     $rootScope.$on('$routeChangeStart', function (event, currRoute, prevRoute) {
         var logged = isAuth();
@@ -17,6 +17,12 @@ app.run(($rootScope, $location) => {
             $location.path('/login');
         }
     });
+
+    var token = sessionStorage.getItem('token');
+
+    if (token)
+        $http.defaults.headers.common['Authorization'] = `bearer ${token}`;
+
 });
 
 

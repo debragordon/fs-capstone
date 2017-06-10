@@ -1,1 +1,12 @@
 ﻿<div>WAITING LIST FORM</div>
+
+<form>
+    <div class="group">
+        <input type="text" ng-model="newWaitingList.room" ng-required><span class="highlight"></span><span class="bar"></span>
+        <label>Room Name</label>
+    </div>
+    <button type="button" class="button buttonBlack" ng-click="addWaitingList(newWaitingList)">
+        ADD Waiting List
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+</form>
