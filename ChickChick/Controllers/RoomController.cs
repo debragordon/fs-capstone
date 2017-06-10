@@ -20,6 +20,7 @@ namespace ChickChick.Controllers
             _roomRepository = roomRepository;
             _userManager = userManager;
         }
+
         [HttpPost]
         [Route("api/room")]
         public void AddNewRoom(Room roomNew)
@@ -27,6 +28,8 @@ namespace ChickChick.Controllers
             _roomRepository.AddNewRoom(roomNew);
         }
 
+        [HttpDelete]
+        [Route("api/delete/{id}")]
         public void DeleteSingleRoom(int id)
         {
             _roomRepository.DeleteSingleRoom(id);

@@ -6,18 +6,25 @@ using System.Net.Http;
 using System.Web.Http;
 using ChickChick.DAL.Interfaces;
 using ChickChick.Models;
+using Microsoft.AspNet.Identity;
 
 namespace ChickChick.Controllers
 {
     public class StudentController : ApiController
     {
         private readonly IStudentRepository _studentRepository;
+        private readonly ApplicationUserManager _userManager;
 
-        public StudentController(IStudentRepository studentRepository)
+        private new ApplicationUser User => _userManager.FindById(base.User.Identity.GetUserId());
+
+        public StudentController(IStudentRepository studentRepository, ApplicationUserManager userManager)
         {
             _studentRepository = studentRepository;
+            _userManager = userManager;
         }
 
+        [HttpPost]
+        [Route("api/student")]
         public void AddNewStudent(Student studentNew)
         {
             _studentRepository.AddNewStudent(studentNew);

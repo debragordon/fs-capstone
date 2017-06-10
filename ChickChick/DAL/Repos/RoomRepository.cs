@@ -28,6 +28,7 @@ namespace ChickChick.DAL.Repos
         {
             var deleteThis = _context.Rooms.Find(id);
             _context.Rooms.Remove(deleteThis);
+            _context.SaveChanges();
         }
 
         public void EditRoom(Room roomEdit)
