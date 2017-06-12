@@ -14,22 +14,33 @@ namespace ChickChick.Controllers
     {
         private readonly IStudentRepository _studentRepository;
         private readonly ApplicationUserManager _userManager;
+        private IRoomRepository _roomRepository;
 
         private new ApplicationUser User => _userManager.FindById(base.User.Identity.GetUserId());
 
-        public StudentController(IStudentRepository studentRepository, ApplicationUserManager userManager)
+        public StudentController(IStudentRepository studentRepository, ApplicationUserManager userManager, IRoomRepository roomRepository)
         {
             _studentRepository = studentRepository;
+            _roomRepository = roomRepository;
             _userManager = userManager;
         }
 
         [HttpPost]
         [Route("api/student")]
-        public void AddNewStudent(Student studentNew)
+        public void AddNewStudent(AddStudentViewModel studentNew)
         {
-            _studentRepository.AddNewStudent(studentNew);
+            var student = new Student
+            {
+                FullName = studentNew.FullName,
+                Birthday = studentNew.Birthday,
+                Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
+            };
+
+            _studentRepository.AddNewStudent(student);
         }
 
+        [HttpDelete]
+        [Route("api/student/{id}")]
         public void DeleteSingleStudent(int id)
         {
             _studentRepository.DeleteSingleStudent(id);
@@ -40,9 +51,11 @@ namespace ChickChick.Controllers
             _studentRepository.EditStudent(studentEdit);
         }
 
+        [HttpGet]
+        [Route("api/student")]
         public IEnumerable<Student> GetAllStudents()
         {
-            return _studentRepository.GetAllStudents();
+            return _roomRepository.GetAllRooms().Where(x => x.Location == User.Location).SelectMany(x => x.Students);
         }
 
         public IEnumerable<Student> GetAllStudents(int roomId)

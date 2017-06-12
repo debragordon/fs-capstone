@@ -14,7 +14,6 @@ namespace ChickChick.DAL.Repos
 
         public RoomRepository(ApplicationDbContext connection)
         {
-            
             _context = connection;
         }
 

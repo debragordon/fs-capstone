@@ -12,7 +12,6 @@ namespace ChickChick.DAL.Interfaces
         void AddNewStudent(Student studentNew);
         void EditStudent(Student studentEdit);
         Student GetSingleStudent(int id);
-        IEnumerable<Student> GetAllStudents();
         IEnumerable<Student> GetAllStudents(int roomId);
         void DeleteSingleStudent(int id);
     }

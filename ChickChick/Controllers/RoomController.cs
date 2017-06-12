@@ -29,7 +29,7 @@ namespace ChickChick.Controllers
         }
 
         [HttpDelete]
-        [Route("api/delete/{id}")]
+        [Route("api/room/{id}")]
         public void DeleteSingleRoom(int id)
         {
             _roomRepository.DeleteSingleRoom(id);
@@ -43,9 +43,6 @@ namespace ChickChick.Controllers
         [Route("api/room")]
         public IEnumerable<Room> GetAllRooms()
         {
-            //getting students from location rooms
-            //_roomRepository.GetAllRooms().Where(x => x.Location == User.Location).SelectMany(x => x.Students);
-
             return _roomRepository.GetAllRooms().Where(x => x.Location == User.Location);
         }
 

@@ -16,6 +16,7 @@ namespace ChickChick.DAL.Repos
         {
             _context = connection;
         }
+
         public void AddNewStudent(Student studentNew)
         {
             _context.Students.Add(studentNew);
@@ -26,17 +27,14 @@ namespace ChickChick.DAL.Repos
         {
             var deleteThis = _context.Students.Find(id);
             _context.Students.Remove(deleteThis);
+            _context.SaveChanges();
+
         }
 
         public void EditStudent(Student studentEdit)
         {
             _context.Students.AddOrUpdate(studentEdit);
             _context.SaveChanges();
-        }
-
-        public IEnumerable<Student> GetAllStudents()
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<Student> GetAllStudents(int roomId)

@@ -12,7 +12,7 @@
     getRooms();
 
     $scope.deleteRoom = function (roomId) {
-        $http.delete(`api/delete/${roomId}`)
+        $http.delete(`api/room/${roomId}`)
             .then(function (res) {
                 getRooms();
             });

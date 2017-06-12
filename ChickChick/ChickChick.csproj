@@ -260,6 +260,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddStudentViewModel.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -295,6 +296,10 @@
     <Compile Include="Migrations\201706070050240_upatedModels.cs" />
     <Compile Include="Migrations\201706070050240_upatedModels.Designer.cs">
       <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706101846339_setupDb.cs" />
+    <Compile Include="Migrations\201706101846339_setupDb.Designer.cs">
+      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -442,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706070050240_upatedModels.resx">
       <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101846339_setupDb.resx">
+      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

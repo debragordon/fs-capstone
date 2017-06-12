@@ -60,13 +60,13 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
             .when("/students",
                 {
                     templateUrl: "app/StudentStack/StudentList.html",
-                    controller: "RoomListController",
+                    controller: "StudentListController",
                     resolve: { isAuth }
                 })
             .when("/students/{id}",
                 {
                     templateUrl: "app/StudentStack/StudentDetail.html",
-                    controller: "RoomDetailController",
+                    controller: "StudentDetailController",
                     resolve: { isAuth }
                 })
             .when("/students/form",
