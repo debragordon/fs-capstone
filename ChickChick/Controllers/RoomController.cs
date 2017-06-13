@@ -48,7 +48,7 @@ namespace ChickChick.Controllers
         }
 
         [HttpGet]
-        [Route("api/room")]
+        [Route("api/room/{id}")]
         public Room GetSingleRoom(int id)
         {
             return _roomRepository.GetSingleRoom(id);

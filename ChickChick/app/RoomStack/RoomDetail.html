@@ -1,20 +1,16 @@
 ﻿<div>SINGLE ROOM</div>
 
 <div>
-    <h3>{{room.roomName}}</h3>
-    <p>{{room.currentEnrolled}}</p>
-    <p>{{room.maxOccupancy}}</p>
+    <h3>{{room.RoomName}}</h3>
+    <p>figure out current enrolled and populate with an anuglar variable</p>
+    <p>figure out room occupancy max and populate via angular</p>
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">
             <ul class="demo-list-icon mdl-list">
                 <li class="mdl-list__item" ng-repeat="student in students">
                     <span class="mdl-list__item-primary-content">
                         <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                        {{student.fullName}}
-                    </span>
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                        {{student.age}}
+                        {{student.FullName}}
                     </span>
                     <a type="button" class="button buttonBlack" ng-click="editStudentRoom(student.Id)">
                         edit room
@@ -27,11 +23,7 @@
                 <li class="mdl-list__item" ng-repeat="waitingStudent in waitingStudents">
                     <span class="mdl-list__item-primary-content">
                         <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                        {{waitingStudent.fullName}}
-                    </span>
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                        {{waitingStudent.age}}
+                        {{waitingStudent.FullName}}
                     </span>
                     <a type="button" class="button buttonBlack" ng-click="editWaitingStudentRoom(waitingStudent.Id)">
                         edit room

@@ -57,6 +57,12 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "RoomFormController",
                     resolve: { isAuth }
                 })
+            .when("/classrooms/update/:id",
+                {
+                    templateUrl: "app/RoomStack/RoomForm.html",
+                    controller: "RoomFormUpdateController",
+                    resolve: { isAuth }
+                })
             .when("/students",
                 {
                     templateUrl: "app/StudentStack/StudentList.html",
@@ -73,6 +79,12 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                 {
                     templateUrl: "app/StudentStack/StudentForm.html",
                     controller: "StudentFormController",
+                    resolve: { isAuth }
+                })
+            .when("/students/update/:id",
+                {
+                    templateUrl: "app/StudentStack/StudentForm.html",
+                    controller: "StudentFormUpdateController",
                     resolve: { isAuth }
                 })
            .when("/waitinglists",
@@ -93,7 +105,12 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "WaitingListFormController",
                     resolve: { isAuth }
                 })
-            .when("/register",
+            .when("/waitinglists/update/:id",
+                {
+                    templateUrl: "app/WaitingListStack/WaitingListForm.html",
+                    controller: "WaitingListFormUpdateController",
+                    resolve: { isAuth }
+                }).when("/register",
                 {
                     templateUrl: "app/Register/Register.html",
                     controller: "RegisterController"

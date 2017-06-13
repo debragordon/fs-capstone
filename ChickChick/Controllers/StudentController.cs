@@ -59,14 +59,14 @@ namespace ChickChick.Controllers
         }
 
         [HttpGet]
-        [Route("api/student")]
+        [Route("api/student/room/{roomId}")]
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
             return _studentRepository.GetAllStudents(roomId);
         }
 
         [HttpGet]
-        [Route("api/student")]
+        [Route("api/student/{id}")]
         public Student GetSingleStudent(int id)
         {
             return _studentRepository.GetSingleStudent(id);
