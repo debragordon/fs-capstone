@@ -45,7 +45,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "RoomListController",
                     resolve: { isAuth }
                 })
-            .when("/classrooms/{id}",
+            .when("/classrooms/:id",
                 {
                     templateUrl: "app/RoomStack/RoomDetail.html",
                     controller: "RoomDetailController",
@@ -63,7 +63,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "StudentListController",
                     resolve: { isAuth }
                 })
-            .when("/students/{id}",
+            .when("/students/:id",
                 {
                     templateUrl: "app/StudentStack/StudentDetail.html",
                     controller: "StudentDetailController",
@@ -81,7 +81,7 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "WaitingListAllController",
                     resolve: { isAuth }
                 })
-            .when("/waitinglists/{id}",
+            .when("/waitinglists/:id",
                 {
                     templateUrl: "app/WaitingListStack/WaitingListDetail.html",
                     controller: "WaitingListDetailController",

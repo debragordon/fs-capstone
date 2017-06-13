@@ -42,6 +42,11 @@ namespace ChickChick.DAL.Repos
             return _context.Students.Where(x => x.Room.Id == roomId);
         }
 
+        public IEnumerable<Student> GetAllStudents()
+        {
+            return _context.Students;
+        }
+
         public Student GetSingleStudent(int id)
         {
             return _context.Students.Find(id);

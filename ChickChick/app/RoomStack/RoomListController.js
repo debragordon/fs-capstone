@@ -4,7 +4,7 @@
 
     var getRooms = function () {
         $http.get('api/room')
-        .then(function(res) {
+        .then(function (res) {
             $scope.rooms = res.data;
         });
     }

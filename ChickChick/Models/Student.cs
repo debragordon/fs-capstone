@@ -14,6 +14,7 @@ namespace ChickChick.Models
         public string FullName { get; set; }
         public DateTime Birthday { get; set; }
         public virtual Room Room { get; set; }
+        public string Location { get; set; }
         public virtual WaitingStudent WaitingStudent { get; set; }
     }
 }

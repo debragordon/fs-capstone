@@ -1,1 +1,15 @@
-﻿<div>SINGLE STUDENT</div>
+﻿<div>SINGLE Student</div>
+
+<div>
+    <h3>{{student.fullName}}</h3>
+    <p>Other Student Stuff here with angular</p>
+    
+    <a type="button" class="button buttonBlack" ng-click="fillStudent(student)">
+        EDIT
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </a>
+    <a type="button" class="button buttonBlack" ng-click="deleteStudent(student.Id)">
+        DELETE
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </a>
+</div>

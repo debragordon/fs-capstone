@@ -25,6 +25,7 @@ namespace ChickChick.Controllers
         [Route("api/room")]
         public void AddNewRoom(Room roomNew)
         {
+            roomNew.Location = User.Location;
             _roomRepository.AddNewRoom(roomNew);
         }
 
@@ -46,6 +47,8 @@ namespace ChickChick.Controllers
             return _roomRepository.GetAllRooms().Where(x => x.Location == User.Location);
         }
 
+        [HttpGet]
+        [Route("api/room")]
         public Room GetSingleRoom(int id)
         {
             return _roomRepository.GetSingleRoom(id);

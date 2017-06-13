@@ -301,6 +301,10 @@
     <Compile Include="Migrations\201706101846339_setupDb.Designer.cs">
       <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706122305121_addLocationToStudent.cs" />
+    <Compile Include="Migrations\201706122305121_addLocationToStudent.Designer.cs">
+      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -450,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706101846339_setupDb.resx">
       <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706122305121_addLocationToStudent.resx">
+      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

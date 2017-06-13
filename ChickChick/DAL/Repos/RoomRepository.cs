@@ -26,6 +26,16 @@ namespace ChickChick.DAL.Repos
         public void DeleteSingleRoom(int id)
         {
             var deleteThis = _context.Rooms.Find(id);
+
+            var studentsToRemove = deleteThis.Students.ToList();
+
+            foreach (var student in studentsToRemove)
+            {
+                student.Room = null;
+                _context.Students.AddOrUpdate(student);
+            }
+            _context.SaveChanges();
+
             _context.Rooms.Remove(deleteThis);
             _context.SaveChanges();
         }

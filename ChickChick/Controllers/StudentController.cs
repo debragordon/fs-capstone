@@ -35,7 +35,7 @@ namespace ChickChick.Controllers
                 Birthday = studentNew.Birthday,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
-
+            student.Location = User.Location;
             _studentRepository.AddNewStudent(student);
         }
 
@@ -52,17 +52,21 @@ namespace ChickChick.Controllers
         }
 
         [HttpGet]
-        [Route("api/student")]
+        [Route("api/studentsInCenter")]
         public IEnumerable<Student> GetAllStudents()
         {
-            return _roomRepository.GetAllRooms().Where(x => x.Location == User.Location).SelectMany(x => x.Students);
+            return _studentRepository.GetAllStudents().Where(x => x.Location == User.Location);
         }
 
+        [HttpGet]
+        [Route("api/student")]
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
             return _studentRepository.GetAllStudents(roomId);
         }
 
+        [HttpGet]
+        [Route("api/student")]
         public Student GetSingleStudent(int id)
         {
             return _studentRepository.GetSingleStudent(id);

@@ -27,7 +27,7 @@ namespace ChickChick.Migrations
                         Room_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Rooms", t => t.Room_Id)
+                .ForeignKey("dbo.Rooms", t => t.Room_Id, cascadeDelete:true)
                 .Index(t => t.Room_Id);
             
             CreateTable(
@@ -39,8 +39,8 @@ namespace ChickChick.Migrations
                         Room_Id = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Rooms", t => t.Room_Id)
-                .ForeignKey("dbo.Students", t => t.Id)
+                .ForeignKey("dbo.Rooms", t => t.Room_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Students", t => t.Id, cascadeDelete: true)
                 .Index(t => t.Id)
                 .Index(t => t.Room_Id);
             
