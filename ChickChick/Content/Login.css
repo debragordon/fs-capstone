@@ -15,7 +15,7 @@ h1, h3 { font-weight: 300; }
 
 h1 { color: black; }
 
-h3 { color: #FF0000; }
+h3 { color: #ff8000; }
 
 form {
     width: 380px;
@@ -162,12 +162,12 @@ a:hover {
 
 /* Button modifiers */
 
-.buttonRed {
-    background: #FF0000;
+.buttonOrange {
+    background: #ff9933;
     text-shadow: 1px 1px 0 rgba(0, 0, 10, .5);
 }
 
-.buttonRed:hover { background: #8B0000; }
+.buttonOrange:hover { background: #ff8000; }
 
 .buttonBlack {
     background: black;
@@ -177,6 +177,13 @@ a:hover {
 
 .buttonBlack:hover { background: #696969; }
 
+.buttonYellow {
+    background: #ffe680;
+    color: white;
+    text-shadow: 1px 1px 0 rgba(39, 110, 204, .5);
+}
+
+.buttonYellow:hover { background: #ffd633; }
 /* Ripples container */
 
 .ripples {
