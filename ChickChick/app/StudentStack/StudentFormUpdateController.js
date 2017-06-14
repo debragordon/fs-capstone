@@ -15,8 +15,6 @@
         $http.get(`api/student/${$scope.studentId}`)
         .then(function (res) {
             var dt = new Date(res.data.Birthday);
-
-            //var newBday = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
             res.data.Birthday = dt;
             $scope.student = res.data;            
             console.log($scope.student);
