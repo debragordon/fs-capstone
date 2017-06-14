@@ -93,24 +93,13 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "WaitingListAllController",
                     resolve: { isAuth }
                 })
-            .when("/waitinglists/form",
-                {
-                    templateUrl: "app/WaitingListStack/WaitingListForm.html",
-                    controller: "WaitingListFormController",
-                    resolve: { isAuth }
-                })
             .when("/waitinglists/:id",
                 {
                     templateUrl: "app/WaitingListStack/WaitingListDetail.html",
                     controller: "WaitingListDetailController",
                     resolve: { isAuth }
                 })
-            .when("/waitinglists/update/:id",
-                {
-                    templateUrl: "app/WaitingListStack/WaitingListForm.html",
-                    controller: "WaitingListFormUpdateController",
-                    resolve: { isAuth }
-                }).when("/register",
+            .when("/register",
                 {
                     templateUrl: "app/Register/Register.html",
                     controller: "RegisterController"

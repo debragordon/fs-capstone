@@ -23,8 +23,7 @@ namespace DuckDuck.Controllers
         public StudentController(IStudentRepository studentRepository, ApplicationUserManager userManager, IRoomRepository roomRepository)
         {
             _studentRepository = studentRepository;
-            _roomRepository = roomRepository;
-            _userManager = userManager;
+
         }
 
         [HttpPost]

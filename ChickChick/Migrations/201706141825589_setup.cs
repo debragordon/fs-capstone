@@ -1,9 +1,9 @@
-namespace DuckDuck.Migrations
+namespace ChickChick.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Round1 : DbMigration
+    public partial class setup : DbMigration
     {
         public override void Up()
         {
@@ -31,10 +31,41 @@ namespace DuckDuck.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.Rooms",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        RoomName = c.String(),
+                        OccupancyMax = c.Int(nullable: false),
+                        Location = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Students",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        FullName = c.String(),
+                        Birthday = c.DateTime(nullable: false),
+                        Location = c.String(),
+                        Enrolled = c.Boolean(nullable: false),
+                        WaitingList = c.Boolean(nullable: false),
+                        PaidDownPayment = c.Boolean(nullable: false),
+                        SubmissionDate = c.DateTime(nullable: false),
+                        StartDate = c.DateTime(nullable: false),
+                        Room_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Rooms", t => t.Room_Id)
+                .Index(t => t.Room_Id);
+            
+            CreateTable(
                 "dbo.AspNetUsers",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
+                        Location = c.String(),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),
@@ -82,16 +113,20 @@ namespace DuckDuck.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Students", "Room_Id", "dbo.Rooms");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
+            DropIndex("dbo.Students", new[] { "Room_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
+            DropTable("dbo.Students");
+            DropTable("dbo.Rooms");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
         }

@@ -14,6 +14,5 @@ namespace DuckDuck.Models
         public int OccupancyMax { get; set; }
         public string Location { get; set; }
         public virtual List<Student> Students { get; set; }
-        public virtual List<WaitingStudent> WaitingStudents { get; set; }
     }
 }

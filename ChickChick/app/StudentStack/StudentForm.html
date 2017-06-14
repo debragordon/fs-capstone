@@ -13,22 +13,31 @@
         <input type="date" ng-model="student.Birthday" ng-required><span class="highlight"></span><span class="bar"></span>
         <label ng-show="!editing">Birthday</label>
     </div>
-    <div class="group">
-        <div class="mdl-selectfield">
-            <label ng-show="!editing">Select Room</label>
-            <select class="browser-default" ng-model="student.RoomId" ng-options="room.Id as room.RoomName for room in rooms">
-                <option value="" disabled selected>Choose Room</option>
-            </select>
+    <ul class="list-group">
+        <li class="list-group-item">
+            Waiting List
+            <div class="material-switch pull-right">
+                <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox" ng-model="student.WaitingList"/>
+                <label for="someSwitchOptionDefault" class="label-default"></label>
+            </div>
+        </li>
+    </ul>
+        <div class="group">
+            <div class="mdl-selectfield">
+                <label ng-show="!editing">Select Room</label>
+                <select class="browser-default" ng-model="student.RoomId" ng-options="room.Id as room.RoomName for room in rooms">
+                    <option value="" disabled selected>Choose Room</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addStudent(student)">
-        ADD
-        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-    </button>
-    <button type="button" class="button buttonBlack" ng-show="editing" ng-click="saveStudent(student)">
-        SAVE
-        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-    </button>
+        <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addStudent(student)">
+            ADD
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+        <button type="button" class="button buttonBlack" ng-show="editing" ng-click="saveStudent(student)">
+            SAVE
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
 </form>
 
 

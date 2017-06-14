@@ -15,6 +15,10 @@ namespace DuckDuck.Models
         public DateTime Birthday { get; set; }
         public virtual Room Room { get; set; }
         public string Location { get; set; }
-        public virtual WaitingStudent WaitingStudent { get; set; }
+        public bool Enrolled { get; set; }
+        public bool WaitingList { get; set; }
+        public bool PaidDownPayment { get; set; }
+        public DateTime SubmissionDate { get; set; }
+        public DateTime StartDate { get; set; }
     }
 }
