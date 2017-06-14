@@ -47,8 +47,11 @@ namespace DuckDuck.Controllers
             _studentRepository.DeleteSingleStudent(id);
         }
 
+        [HttpPut]
+        [Route("api/student")]
         public void EditStudent(Student studentEdit)
         {
+            studentEdit.Location = User.Location;
             _studentRepository.EditStudent(studentEdit);
         }
 
