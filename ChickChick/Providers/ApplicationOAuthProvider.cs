@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ChickChick.Models;
+using DuckDuck.Models;
 
-namespace ChickChick.Providers
+namespace DuckDuck.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {

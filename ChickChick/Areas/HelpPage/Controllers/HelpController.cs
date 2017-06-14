@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using ChickChick.Areas.HelpPage.ModelDescriptions;
-using ChickChick.Areas.HelpPage.Models;
+using DuckDuck.Areas.HelpPage.ModelDescriptions;
+using DuckDuck.Areas.HelpPage.Models;
 
-namespace ChickChick.Areas.HelpPage.Controllers
+namespace DuckDuck.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

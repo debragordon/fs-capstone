@@ -1,4 +1,4 @@
-namespace ChickChick.Migrations
+namespace DuckDuck.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

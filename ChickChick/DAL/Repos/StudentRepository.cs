@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ChickChick.DAL.Interfaces;
-using ChickChick.Models;
+using DuckDuck.DAL.Interfaces;
+using DuckDuck.Models;
 using System.Data.Entity.Migrations;
 
-namespace ChickChick.DAL.Repos
+namespace DuckDuck.DAL.Repos
 {
     public class StudentRepository : IStudentRepository
     {

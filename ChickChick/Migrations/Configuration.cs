@@ -1,18 +1,18 @@
-namespace ChickChick.Migrations
+namespace DuckDuck.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ChickChick.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DuckDuck.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ChickChick.Models.ApplicationDbContext context)
+        protected override void Seed(DuckDuck.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

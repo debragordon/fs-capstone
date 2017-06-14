@@ -1,4 +1,4 @@
-namespace ChickChick.Areas.HelpPage.ModelDescriptions
+namespace DuckDuck.Areas.HelpPage.ModelDescriptions
 {
     public class CollectionModelDescription : ModelDescription
     {

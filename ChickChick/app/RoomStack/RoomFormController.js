@@ -1,13 +1,14 @@
 ﻿app.controller("RoomFormController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
         console.log("RoomFormController connected");
 
-        $scope.newRoom = {};
+        $scope.room = {};
 
+        $scope.editing = false;
         $scope.addRoom = function () {
-            $http.post('/api/room', $scope.newRoom)
+            $http.post('/api/room', $scope.room)
                 .then(function() {
                     $location.path("/classrooms");
-                    $scope.newRoom = {};
+                    $scope.room = {};
                 });
         }
 

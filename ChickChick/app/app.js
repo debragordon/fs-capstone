@@ -1,4 +1,4 @@
-﻿var app = angular.module("ChickChickApp", ["ngRoute"]);
+﻿var app = angular.module("DuckDuckApp", ["ngRoute"]);
 
 var isAuth = function () {
     return sessionStorage.getItem("token") ? true : false;
@@ -45,12 +45,6 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "RoomListController",
                     resolve: { isAuth }
                 })
-            .when("/classrooms/:id",
-                {
-                    templateUrl: "app/RoomStack/RoomDetail.html",
-                    controller: "RoomDetailController",
-                    resolve: { isAuth }
-                })
             .when("/classrooms/form",
                 {
                     templateUrl: "app/RoomStack/RoomForm.html",
@@ -63,16 +57,16 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "RoomFormUpdateController",
                     resolve: { isAuth }
                 })
+            .when("/classrooms/:id",
+                {
+                    templateUrl: "app/RoomStack/RoomDetail.html",
+                    controller: "RoomDetailController",
+                    resolve: { isAuth }
+                })
             .when("/students",
                 {
                     templateUrl: "app/StudentStack/StudentList.html",
                     controller: "StudentListController",
-                    resolve: { isAuth }
-                })
-            .when("/students/:id",
-                {
-                    templateUrl: "app/StudentStack/StudentDetail.html",
-                    controller: "StudentDetailController",
                     resolve: { isAuth }
                 })
             .when("/students/form",
@@ -87,22 +81,28 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "StudentFormUpdateController",
                     resolve: { isAuth }
                 })
+            .when("/students/:id",
+                {
+                    templateUrl: "app/StudentStack/StudentDetail.html",
+                    controller: "StudentDetailController",
+                    resolve: { isAuth }
+                })
            .when("/waitinglists",
                 {
                     templateUrl: "app/WaitingListStack/WaitingListAll.html",
                     controller: "WaitingListAllController",
                     resolve: { isAuth }
                 })
-            .when("/waitinglists/:id",
-                {
-                    templateUrl: "app/WaitingListStack/WaitingListDetail.html",
-                    controller: "WaitingListDetailController",
-                    resolve: { isAuth }
-                })
             .when("/waitinglists/form",
                 {
                     templateUrl: "app/WaitingListStack/WaitingListForm.html",
                     controller: "WaitingListFormController",
+                    resolve: { isAuth }
+                })
+            .when("/waitinglists/:id",
+                {
+                    templateUrl: "app/WaitingListStack/WaitingListDetail.html",
+                    controller: "WaitingListDetailController",
                     resolve: { isAuth }
                 })
             .when("/waitinglists/update/:id",

@@ -18,7 +18,7 @@
 using System.Web.Http.Dependencies;
 using StructureMap;
 
-namespace ChickChick.DependencyResolution
+namespace DuckDuck.DependencyResolution
 {
     /// <summary>
     /// The structure map dependency resolver.

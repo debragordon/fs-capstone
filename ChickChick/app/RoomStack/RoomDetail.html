@@ -13,7 +13,7 @@
                         {{student.FullName}}
                     </span>
                     <a type="button" class="button buttonBlack" ng-click="editStudentRoom(student.Id)">
-                        edit room
+                        Edit
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </a>
                 </li>
@@ -34,7 +34,7 @@
         </div>
     </div>
     
-    <a type="button" class="button buttonBlack" ng-click="fillForm(room)">
+    <a type="button" class="button buttonBlack" ng-href="/classrooms/update/{{room.Id}}">
         EDIT
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </a>

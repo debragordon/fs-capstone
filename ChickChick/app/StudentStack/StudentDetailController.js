@@ -17,6 +17,7 @@
         $http.delete(`api/student/${$scope.studentId}`)
             .then(function (res) {
                 getStudent();
+                $location.path("/students");
             });
     };
 }

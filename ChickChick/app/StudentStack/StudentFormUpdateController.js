@@ -1,18 +1,31 @@
-﻿app.controller("StudentFormController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
-    console.log("StudentFormController connected");
+﻿app.controller("StudentFormUpdateController", ["$scope", "$http", "$location", "$routeParams", function ($scope, $http, $location, $routeParams) {
+    console.log("StudentFormUpdateController connected");
 
-    $scope.editing = false;
-
+    $scope.editing = true;
+    $scope.studentId = $routeParams.id;
     $scope.rooms = [];
+    $scope.student = {};
+
     $http.get('api/room')
         .then(function (res) {
             $scope.rooms = res.data;
         });
 
-    $scope.student = {};
+    var getStudent = function () {
+        $http.get(`api/student/${$scope.studentId}`)
+        .then(function (res) {
+            var dt = new Date(res.data.Birthday);
 
-    $scope.addStudent = function () {
-        $http.post('/api/student', $scope.student)
+            //var newBday = (dt.getMonth() + 1) + "/" + dt.getDate() + "/" + dt.getFullYear();
+            res.data.Birthday = dt;
+            $scope.student = res.data;            
+            console.log($scope.student);
+        });
+    }
+    getStudent();
+
+    $scope.saveStudent = function () {
+        $http.put('/api/student', $scope.student)
             .then(function () {
                 $location.path("/students");
                 $scope.student = {};
@@ -53,6 +66,7 @@
             $(this).removeClass('is-active');
         });
 
+        //document.querySelector(".mdl-textfield").MaterialTextfield.change();
     });
 
 }

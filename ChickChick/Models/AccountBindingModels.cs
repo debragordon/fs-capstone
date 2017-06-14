@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace ChickChick.Models
+namespace DuckDuck.Models
 {
     // Models used as parameters to AccountController actions.
 

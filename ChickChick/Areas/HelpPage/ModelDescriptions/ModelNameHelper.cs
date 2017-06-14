@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace ChickChick.Areas.HelpPage.ModelDescriptions
+namespace DuckDuck.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

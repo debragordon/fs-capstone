@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using ChickChick.Areas.HelpPage.ModelDescriptions;
-using ChickChick.Areas.HelpPage.Models;
+using DuckDuck.Areas.HelpPage.ModelDescriptions;
+using DuckDuck.Areas.HelpPage.Models;
 
-namespace ChickChick.Areas.HelpPage
+namespace DuckDuck.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

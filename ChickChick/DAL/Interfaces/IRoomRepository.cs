@@ -1,11 +1,11 @@
-﻿using ChickChick.Models;
+﻿using DuckDuck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChickChick.DAL.Interfaces
+namespace DuckDuck.DAL.Interfaces
 {
     public interface IRoomRepository
     {

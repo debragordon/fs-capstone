@@ -1,14 +1,21 @@
-﻿<div>SINGLE Student</div>
+﻿<div>SINGLE STUDENT</div>
 
 <div>
     <h3>{{student.FullName}}</h3>
-    <p>Other Student Stuff here with angular</p>
+    <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
+        {{student.Room.RoomName}}
+    </span>
+    <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
+        {{student.Birthday}}
+    </span>
     
-    <a type="button" class="button buttonBlack" ng-click="fillStudent(student)">
+    <a type="button" class="button buttonBlack" ng-href="/students/update/{{student.Id}}">
         EDIT
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </a>
-    <a type="button" class="button buttonBlack" ng-click="deleteStudent()">
+    <a type="button" class="button buttonBlack" ng-click="deleteStudent(student.Id)">
         DELETE
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </a>

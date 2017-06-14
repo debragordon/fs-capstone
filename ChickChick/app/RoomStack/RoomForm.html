@@ -2,14 +2,18 @@
 
 <form>
     <div class="group">
-        <input type="text" ng-model="newRoom.roomName" ng-required><span class="highlight"></span><span class="bar"></span>
-        <label>Room Name</label>
+        <input type="text" ng-model="room.RoomName" ng-required><span class="highlight"></span><span class="bar"></span>
+        <label ng-show="!editing">Room Name</label>
     </div>
     <div class="group">
-        <input type="text" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="newRoom.maxOccupancy" ng-required><span class="highlight"></span><span class="bar"></span>
-        <label>Max Number of Allowed Students</label>
+        <input type="text" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="room.OccupancyMax" ng-required><span class="highlight"></span><span class="bar"></span>
+        <label ng-show="!editing">Max Number of Allowed Students</label>
     </div>
-    <button type="button" class="button buttonBlack" ng-click="addRoom(newRoom)">Add Room
+    <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addRoom(room)">Add Room
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+    <button type="button" class="button buttonBlack" ng-show="editing" ng-click="saveRoom(room)">
+        Save Room
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </button>
 </form>

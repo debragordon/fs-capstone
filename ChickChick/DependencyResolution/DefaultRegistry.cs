@@ -15,7 +15,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace ChickChick.DependencyResolution {
+namespace DuckDuck.DependencyResolution {
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.DataHandler;
     using Microsoft.Owin.Security.DataHandler.Encoder;

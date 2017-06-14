@@ -7,24 +7,8 @@
                 <i class="material-icons mdl-list__item-icon chart-timeline"></i>
                 {{student.FullName}}
             </span>
-            <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                {{student.Room.RoomName}}
-            </span>
-            <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                {{student.Birthday}}
-            </span>
             <a type="button" class="button buttonBlack" ng-href="/students/{{student.Id}}">
                 VIEW
-                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-            </a>
-            <a type="button" class="button buttonBlack" ng-click="fillForm(student)">
-                EDIT
-                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-            </a>
-            <a type="button" class="button buttonBlack" ng-click="deleteStudent(student.Id)">
-                DELETE
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
             </a>
         </li>

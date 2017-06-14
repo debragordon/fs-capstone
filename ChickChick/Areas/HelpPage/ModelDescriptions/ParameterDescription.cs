@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace ChickChick.Areas.HelpPage.ModelDescriptions
+namespace DuckDuck.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

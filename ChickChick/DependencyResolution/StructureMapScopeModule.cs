@@ -1,7 +1,7 @@
-namespace ChickChick.DependencyResolution {
+namespace DuckDuck.DependencyResolution {
     using System.Web;
 
-    using ChickChick.App_Start;
+    using DuckDuck.App_Start;
 
     using StructureMap.Web.Pipeline;
 

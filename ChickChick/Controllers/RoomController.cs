@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using ChickChick.DAL.Interfaces;
-using ChickChick.Models;
+using DuckDuck.DAL.Interfaces;
+using DuckDuck.Models;
+using DuckDuck;
 using Microsoft.AspNet.Identity;
 
-namespace ChickChick.Controllers
+namespace DuckDuck.Controllers
 {
     [Authorize]
     public class RoomController : ApiController
@@ -36,10 +37,14 @@ namespace ChickChick.Controllers
             _roomRepository.DeleteSingleRoom(id);
         }
 
+        [HttpPut]
+        [Route("api/room")]
         public void EditRoom(Room roomEdit)
         {
+            roomEdit.Location = User.Location;
             _roomRepository.EditRoom(roomEdit);
         }
+
         [HttpGet]
         [Route("api/room")]
         public IEnumerable<Room> GetAllRooms()

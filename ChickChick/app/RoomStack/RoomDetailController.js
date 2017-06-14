@@ -8,7 +8,6 @@
         $http.get(`api/room/${$scope.roomId}`)
         .then(function (res) {
             $scope.room = res.data;
-            console.log($scope.room);
         });
     }
 
@@ -29,6 +28,7 @@
         $http.delete(`api/room/${$scope.roomId}`)
             .then(function (res) {
                 getRoom();
+                $location.path("/classrooms");
             });
     };
     }

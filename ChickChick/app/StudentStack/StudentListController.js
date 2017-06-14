@@ -6,7 +6,6 @@
     var getStudents = function () {
         $http.get('api/studentsInCenter')
             .then(function (res) {
-                console.log("res data", res.data);
                 $scope.students = res.data;
             });
     }

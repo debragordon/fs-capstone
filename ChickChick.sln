@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickChick", "ChickChick\ChickChick.csproj", "{6E0F63B0-5F58-4112-9B3D-C5BAB403218D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDuck", "ChickChick\DuckDuck.csproj", "{6E0F63B0-5F58-4112-9B3D-C5BAB403218D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChickChick.Tests", "ChickChick.Tests\ChickChick.Tests.csproj", "{EA55EEBD-0095-4785-AC93-31470203B500}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDuck.Tests", "ChickChick.Tests\DuckDuck.Tests.csproj", "{EA55EEBD-0095-4785-AC93-31470203B500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using ChickChick.Providers;
-using ChickChick.Models;
+using DuckDuck.Providers;
+using DuckDuck.Models;
 
-namespace ChickChick
+namespace DuckDuck
 {
     public partial class Startup
     {

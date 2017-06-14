@@ -331,6 +331,7 @@
     <Content Include="app\Register\RegisterController.js" />
     <Content Include="app\RoomStack\RoomDetail.html" />
     <Content Include="app\RoomStack\RoomFormController.js" />
+    <Content Include="app\RoomStack\RoomFormUpdateController.js" />
     <Content Include="app\RoomStack\RoomListController.js" />
     <Content Include="app\RoomStack\RoomForm.html" />
     <Content Include="app\RoomStack\RoomList.html" />
@@ -339,6 +340,7 @@
     <Content Include="app\StudentStack\StudentDetailController.js" />
     <Content Include="app\StudentStack\StudentForm.html" />
     <Content Include="app\StudentStack\StudentFormController.js" />
+    <Content Include="app\StudentStack\StudentFormUpdateController.js" />
     <Content Include="app\StudentStack\StudentList.html" />
     <Content Include="app\StudentStack\StudentListController.js" />
     <Content Include="app\WaitingListStack\WaitingListDetail.html" />

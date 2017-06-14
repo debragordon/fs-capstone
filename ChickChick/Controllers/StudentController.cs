@@ -4,11 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using ChickChick.DAL.Interfaces;
-using ChickChick.Models;
+using DuckDuck.DAL.Interfaces;
+using DuckDuck.Models;
 using Microsoft.AspNet.Identity;
+using DuckDuck;
+using DuckDuck.Controllers;
 
-namespace ChickChick.Controllers
+namespace DuckDuck.Controllers
 {
     public class StudentController : ApiController
     {
