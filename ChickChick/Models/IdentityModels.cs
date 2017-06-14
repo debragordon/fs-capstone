@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace ChickChick.Models
+namespace DuckDuck.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -29,7 +29,7 @@ namespace ChickChick.Models
         public DbSet<WaitingStudent> WaitingStudents { get; set; }
 
         public ApplicationDbContext()
-            : base("ChickChickApp", throwIfV1Schema: false)
+            : base("DuckDuckApp", throwIfV1Schema: false)
         {
         }
         

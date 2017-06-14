@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace ChickChick.Models
+namespace DuckDuck.Models
 {
     public class Room
     {

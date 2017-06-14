@@ -2,19 +2,34 @@
 
 <form>
     <div class="group">
-        <input type="text" ng-model="newStudent.studentName" ng-required><span class="highlight"></span><span class="bar"></span>
-        <label>Student Name (First Last)</label>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="sample1" ng-model="student.FullName" ng-required>
+            <span class="highlight"></span><span class="bar"></span>
+            <label class="mdl-textfield__label" for="sample1" ng-show="!editing">Student Name (First Last)</label>
+        </div>
+
     </div>
     <div class="group">
-        <input type="text" ng-model="newStudent.birthday" ng-required><span class="highlight"></span><span class="bar"></span>
-        <label>Childcare Center Location Name</label>
+        <input type="date" ng-model="student.Birthday" ng-required><span class="highlight"></span><span class="bar"></span>
+        <label ng-show="!editing">Birthday</label>
     </div>
     <div class="group">
-        <input type="text" ng-model="newStudent.Room" ng-required><span class="highlight"></span><span class="bar"></span>
-        <label>Room</label>
+        <div class="mdl-selectfield">
+            <label ng-show="!editing">Select Room</label>
+            <select class="browser-default" ng-model="student.RoomId" ng-options="room.Id as room.RoomName for room in rooms">
+                <option value="" disabled selected>Choose Room</option>
+            </select>
+        </div>
     </div>
-    <button type="button" class="button buttonBlack" ng-click="addStudent(newStudent)">
-        Add Student
+    <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addStudent(student)">
+        ADD
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </button>
+    <button type="button" class="button buttonBlack" ng-show="editing" ng-click="saveStudent(student)">
+        SAVE
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </button>
 </form>
+
+
+

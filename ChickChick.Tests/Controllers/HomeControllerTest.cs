@@ -1,9 +1,9 @@
 ﻿using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ChickChick;
-using ChickChick.Controllers;
+using DuckDuck;
+using DuckDuck.Controllers;
 
-namespace ChickChick.Tests.Controllers
+namespace DuckDuck.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest

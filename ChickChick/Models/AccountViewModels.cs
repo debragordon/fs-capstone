@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ChickChick.Models
+namespace DuckDuck.Models
 {
     // Models returned by AccountController actions.
 

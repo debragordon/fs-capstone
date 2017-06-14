@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace ChickChick
+namespace DuckDuck
 {
     public class BundleConfig
     {
@@ -32,6 +32,10 @@ namespace ChickChick
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-route.js",
+                    "~/Scripts/angular-animate.js",
+                    "~/Scripts/angular-aria.js",
+                    "~/Scripts/angular-material.js",
+                    "~/Scripts/angular-mocks.js",
                     "~/app/app.js")
                 .IncludeDirectory("~/app", "*.js", true));
         }

@@ -1,13 +1,13 @@
-﻿using ChickChick.DAL.Interfaces;
+﻿using DuckDuck.DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using ChickChick.Models;
+using DuckDuck.Models;
 
-namespace ChickChick.Controllers
+namespace DuckDuck.Controllers
 {
     public class WaitingStudentController : ApiController
     {

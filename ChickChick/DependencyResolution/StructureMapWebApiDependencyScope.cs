@@ -22,7 +22,7 @@ using System.Web.Http.Dependencies;
 using Microsoft.Practices.ServiceLocation;
 using StructureMap;
 
-namespace ChickChick.DependencyResolution
+namespace DuckDuck.DependencyResolution
 {
     /// <summary>
     /// The structure map web api dependency scope.

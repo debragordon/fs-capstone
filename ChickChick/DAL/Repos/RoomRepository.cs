@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ChickChick.DAL.Interfaces;
-using ChickChick.Models;
+using DuckDuck.DAL.Interfaces;
+using DuckDuck.Models;
 using System.Data.Entity.Migrations;
 
-namespace ChickChick.DAL.Repos
+namespace DuckDuck.DAL.Repos
 {
     public class RoomRepository : IRoomRepository
     {
@@ -14,7 +14,6 @@ namespace ChickChick.DAL.Repos
 
         public RoomRepository(ApplicationDbContext connection)
         {
-            
             _context = connection;
         }
 
@@ -27,13 +26,26 @@ namespace ChickChick.DAL.Repos
         public void DeleteSingleRoom(int id)
         {
             var deleteThis = _context.Rooms.Find(id);
+
+            var studentsToRemove = deleteThis.Students.ToList();
+
+            foreach (var student in studentsToRemove)
+            {
+                student.Room = null;
+                _context.Students.AddOrUpdate(student);
+            }
+            _context.SaveChanges();
+
             _context.Rooms.Remove(deleteThis);
             _context.SaveChanges();
         }
 
         public void EditRoom(Room roomEdit)
         {
-            _context.Rooms.AddOrUpdate(roomEdit);
+            var room = GetSingleRoom(roomEdit.Id);
+            room.RoomName = roomEdit.RoomName;
+            room.OccupancyMax = roomEdit.OccupancyMax;
+            _context.Rooms.AddOrUpdate(room);
             _context.SaveChanges();
         }
 

@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace ChickChick.Areas.HelpPage
+namespace DuckDuck.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using ChickChick.Areas.HelpPage.ModelDescriptions;
+using DuckDuck.Areas.HelpPage.ModelDescriptions;
 
-namespace ChickChick.Areas.HelpPage
+namespace DuckDuck.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

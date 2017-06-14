@@ -1,19 +1,19 @@
-﻿using ChickChick.Models;
+﻿using DuckDuck.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChickChick.DAL.Interfaces
+namespace DuckDuck.DAL.Interfaces
 {
     public interface IStudentRepository
     {
         void AddNewStudent(Student studentNew);
         void EditStudent(Student studentEdit);
         Student GetSingleStudent(int id);
-        IEnumerable<Student> GetAllStudents();
         IEnumerable<Student> GetAllStudents(int roomId);
+        IEnumerable<Student> GetAllStudents();
         void DeleteSingleStudent(int id);
     }
 }

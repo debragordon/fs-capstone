@@ -260,6 +260,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AddStudentViewModel.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -296,6 +297,14 @@
     <Compile Include="Migrations\201706070050240_upatedModels.Designer.cs">
       <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706101846339_setupDb.cs" />
+    <Compile Include="Migrations\201706101846339_setupDb.Designer.cs">
+      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706122305121_addLocationToStudent.cs" />
+    <Compile Include="Migrations\201706122305121_addLocationToStudent.Designer.cs">
+      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -322,6 +331,7 @@
     <Content Include="app\Register\RegisterController.js" />
     <Content Include="app\RoomStack\RoomDetail.html" />
     <Content Include="app\RoomStack\RoomFormController.js" />
+    <Content Include="app\RoomStack\RoomFormUpdateController.js" />
     <Content Include="app\RoomStack\RoomListController.js" />
     <Content Include="app\RoomStack\RoomForm.html" />
     <Content Include="app\RoomStack\RoomList.html" />
@@ -330,6 +340,7 @@
     <Content Include="app\StudentStack\StudentDetailController.js" />
     <Content Include="app\StudentStack\StudentForm.html" />
     <Content Include="app\StudentStack\StudentFormController.js" />
+    <Content Include="app\StudentStack\StudentFormUpdateController.js" />
     <Content Include="app\StudentStack\StudentList.html" />
     <Content Include="app\StudentStack\StudentListController.js" />
     <Content Include="app\WaitingListStack\WaitingListDetail.html" />
@@ -442,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706070050240_upatedModels.resx">
       <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706101846339_setupDb.resx">
+      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706122305121_addLocationToStudent.resx">
+      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

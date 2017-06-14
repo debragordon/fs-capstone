@@ -4,7 +4,7 @@
 
     var getRooms = function () {
         $http.get('api/room')
-        .then(function(res) {
+        .then(function (res) {
             $scope.rooms = res.data;
         });
     }
@@ -12,7 +12,7 @@
     getRooms();
 
     $scope.deleteRoom = function (roomId) {
-        $http.delete(`api/delete/${roomId}`)
+        $http.delete(`api/room/${roomId}`)
             .then(function (res) {
                 getRooms();
             });

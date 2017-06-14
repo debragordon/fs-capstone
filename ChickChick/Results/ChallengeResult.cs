@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace ChickChick.Results
+namespace DuckDuck.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

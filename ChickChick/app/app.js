@@ -1,4 +1,4 @@
-﻿var app = angular.module("ChickChickApp", ["ngRoute"]);
+﻿var app = angular.module("DuckDuckApp", ["ngRoute"]);
 
 var isAuth = function () {
     return sessionStorage.getItem("token") ? true : false;
@@ -45,28 +45,28 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "RoomListController",
                     resolve: { isAuth }
                 })
-            .when("/classrooms/{id}",
-                {
-                    templateUrl: "app/RoomStack/RoomDetail.html",
-                    controller: "RoomDetailController",
-                    resolve: { isAuth }
-                })
             .when("/classrooms/form",
                 {
                     templateUrl: "app/RoomStack/RoomForm.html",
                     controller: "RoomFormController",
                     resolve: { isAuth }
                 })
+            .when("/classrooms/update/:id",
+                {
+                    templateUrl: "app/RoomStack/RoomForm.html",
+                    controller: "RoomFormUpdateController",
+                    resolve: { isAuth }
+                })
+            .when("/classrooms/:id",
+                {
+                    templateUrl: "app/RoomStack/RoomDetail.html",
+                    controller: "RoomDetailController",
+                    resolve: { isAuth }
+                })
             .when("/students",
                 {
                     templateUrl: "app/StudentStack/StudentList.html",
-                    controller: "RoomListController",
-                    resolve: { isAuth }
-                })
-            .when("/students/{id}",
-                {
-                    templateUrl: "app/StudentStack/StudentDetail.html",
-                    controller: "RoomDetailController",
+                    controller: "StudentListController",
                     resolve: { isAuth }
                 })
             .when("/students/form",
@@ -75,16 +75,22 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "StudentFormController",
                     resolve: { isAuth }
                 })
+            .when("/students/update/:id",
+                {
+                    templateUrl: "app/StudentStack/StudentForm.html",
+                    controller: "StudentFormUpdateController",
+                    resolve: { isAuth }
+                })
+            .when("/students/:id",
+                {
+                    templateUrl: "app/StudentStack/StudentDetail.html",
+                    controller: "StudentDetailController",
+                    resolve: { isAuth }
+                })
            .when("/waitinglists",
                 {
                     templateUrl: "app/WaitingListStack/WaitingListAll.html",
                     controller: "WaitingListAllController",
-                    resolve: { isAuth }
-                })
-            .when("/waitinglists/{id}",
-                {
-                    templateUrl: "app/WaitingListStack/WaitingListDetail.html",
-                    controller: "WaitingListDetailController",
                     resolve: { isAuth }
                 })
             .when("/waitinglists/form",
@@ -93,7 +99,18 @@ app.config(["$routeProvider", "$locationProvider", function ($routeProvider, $lo
                     controller: "WaitingListFormController",
                     resolve: { isAuth }
                 })
-            .when("/register",
+            .when("/waitinglists/:id",
+                {
+                    templateUrl: "app/WaitingListStack/WaitingListDetail.html",
+                    controller: "WaitingListDetailController",
+                    resolve: { isAuth }
+                })
+            .when("/waitinglists/update/:id",
+                {
+                    templateUrl: "app/WaitingListStack/WaitingListForm.html",
+                    controller: "WaitingListFormUpdateController",
+                    resolve: { isAuth }
+                }).when("/register",
                 {
                     templateUrl: "app/Register/Register.html",
                     controller: "RegisterController"

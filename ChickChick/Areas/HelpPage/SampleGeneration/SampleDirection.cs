@@ -1,4 +1,4 @@
-namespace ChickChick.Areas.HelpPage
+namespace DuckDuck.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

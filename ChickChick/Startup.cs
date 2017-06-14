@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(ChickChick.Startup))]
+[assembly: OwinStartup(typeof(DuckDuck.Startup))]
 
-namespace ChickChick
+namespace DuckDuck
 {
     public partial class Startup
     {

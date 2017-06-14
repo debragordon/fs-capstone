@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ChickChick.Models;
-using ChickChick.Providers;
-using ChickChick.Results;
+using DuckDuck.Models;
+using DuckDuck.Providers;
+using DuckDuck.Results;
 
-namespace ChickChick.Controllers
+namespace DuckDuck.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

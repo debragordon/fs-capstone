@@ -16,7 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace ChickChick.DependencyResolution {
+namespace DuckDuck.DependencyResolution {
     using StructureMap;
 	
     public static class IoC {

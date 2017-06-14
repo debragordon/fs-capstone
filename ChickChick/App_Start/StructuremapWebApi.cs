@@ -16,11 +16,11 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Web.Http;
-using ChickChick.DependencyResolution;
+using DuckDuck.DependencyResolution;
 
-[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(ChickChick.App_Start.StructuremapWebApi), "Start")]
+[assembly: WebActivatorEx.PostApplicationStartMethod(typeof(DuckDuck.App_Start.StructuremapWebApi), "Start")]
 
-namespace ChickChick.App_Start {
+namespace DuckDuck.App_Start {
     public static class StructuremapWebApi {
         public static void Start() {
 			var container = StructuremapMvc.StructureMapDependencyScope.Container;

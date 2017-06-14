@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ChickChick.DAL.Interfaces;
-using ChickChick.Models;
+using DuckDuck.DAL.Interfaces;
+using DuckDuck.Models;
 using System.Data.Entity.Migrations;
 
-namespace ChickChick.DAL.Repos
+namespace DuckDuck.DAL.Repos
 {
     public class StudentRepository : IStudentRepository
     {
@@ -16,6 +16,7 @@ namespace ChickChick.DAL.Repos
         {
             _context = connection;
         }
+
         public void AddNewStudent(Student studentNew)
         {
             _context.Students.Add(studentNew);
@@ -26,6 +27,8 @@ namespace ChickChick.DAL.Repos
         {
             var deleteThis = _context.Students.Find(id);
             _context.Students.Remove(deleteThis);
+            _context.SaveChanges();
+
         }
 
         public void EditStudent(Student studentEdit)
@@ -34,14 +37,14 @@ namespace ChickChick.DAL.Repos
             _context.SaveChanges();
         }
 
-        public IEnumerable<Student> GetAllStudents()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
             return _context.Students.Where(x => x.Room.Id == roomId);
+        }
+
+        public IEnumerable<Student> GetAllStudents()
+        {
+            return _context.Students;
         }
 
         public Student GetSingleStudent(int id)
