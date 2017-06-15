@@ -1,6 +1,4 @@
-﻿<div>SINGLE ROOM</div>
-
-<div>
+﻿<div>
     <h3>{{room.RoomName}}</h3>
     <p>figure out current enrolled and populate with an anuglar variable</p>
     <p>figure out room occupancy max and populate via angular</p>
@@ -12,28 +10,18 @@
                         <i class="material-icons mdl-list__item-icon chart-timeline"></i>
                         {{student.FullName}}
                     </span>
-                    <a type="button" class="button buttonBlack" ng-click="editStudentRoom(student.Id)">
-                        Edit
-                        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-                    </a>
-                </li>
-            </ul>        </div>
-        <div class="mdl-cell mdl-cell--6-col">
-            <ul class="demo-list-icon mdl-list">
-                <li class="mdl-list__item" ng-repeat="waitingStudent in waitingStudents">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                        {{waitingStudent.FullName}}
-                    </span>
-                    <a type="button" class="button buttonBlack" ng-click="editWaitingStudentRoom(waitingStudent.Id)">
-                        edit room
+                    <a type="button" class="button buttonBlack" ng-href="/students/update/{{student.Id}}">
+                        EDIT
                         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
                     </a>
                 </li>
             </ul>
         </div>
     </div>
-    
+    <a type="button" class="button buttonBlack" ng-href="//waitinglists/{{room.Id}}">
+        View Waiting List
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </a>    
     <a type="button" class="button buttonBlack" ng-href="/classrooms/update/{{room.Id}}">
         EDIT
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
