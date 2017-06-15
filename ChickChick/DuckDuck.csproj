@@ -282,6 +282,10 @@
     <Compile Include="Migrations\201706141825589_setup.Designer.cs">
       <DependentUpon>201706141825589_setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706142344514_Dates.cs" />
+    <Compile Include="Migrations\201706142344514_Dates.Designer.cs">
+      <DependentUpon>201706142344514_Dates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -337,6 +341,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\baby.jpg" />
     <Content Include="Images\DuckDuck-logo-head-bw.png" />
     <Content Include="Images\DuckDuck-logo-head.png" />
     <Content Include="Images\DuckDuck-logo.jpg" />
@@ -422,6 +427,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706141825589_setup.resx">
       <DependentUpon>201706141825589_setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706142344514_Dates.resx">
+      <DependentUpon>201706142344514_Dates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

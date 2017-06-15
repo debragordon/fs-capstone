@@ -18,7 +18,7 @@ namespace DuckDuck.Models
         public bool Enrolled { get; set; }
         public bool WaitingList { get; set; }
         public bool PaidDownPayment { get; set; }
-        public DateTime SubmissionDate { get; set; }
-        public DateTime StartDate { get; set; }
+        public DateTime? SubmissionDate { get; set; }
+        public DateTime? StartDate { get; set; }
     }
 }

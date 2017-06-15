@@ -23,7 +23,8 @@ namespace DuckDuck.Controllers
         public StudentController(IStudentRepository studentRepository, ApplicationUserManager userManager, IRoomRepository roomRepository)
         {
             _studentRepository = studentRepository;
-
+            _roomRepository = roomRepository;
+            _userManager = userManager;
         }
 
         [HttpPost]
@@ -34,6 +35,11 @@ namespace DuckDuck.Controllers
             {
                 FullName = studentNew.FullName,
                 Birthday = studentNew.Birthday,
+                Enrolled = studentNew.Enrolled,
+                WaitingList = studentNew.WaitingList,
+                PaidDownPayment = studentNew.PaidDownPayment,
+                //SubmissionDate = studentNew.SubmissionDate,
+                //StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
             student.Location = User.Location;

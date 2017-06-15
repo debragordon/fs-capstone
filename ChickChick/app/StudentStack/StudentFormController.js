@@ -14,6 +14,7 @@
     $scope.addStudent = function () {
         $http.post('/api/student', $scope.student)
             .then(function () {
+                console.log("new student", $scope.student);
                 $location.path("/students");
                 $scope.student = {};
             });
