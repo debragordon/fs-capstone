@@ -29,12 +29,17 @@ namespace DuckDuck.Controllers
 
         [HttpPost]
         [Route("api/student")]
-        public void AddNewStudent(AddStudentViewModel studentNew)
+        public void AddNewStudent([FromBody]AddStudentViewModel studentNew)
         {
             var student = new Student
             {
                 FullName = studentNew.FullName,
                 Birthday = studentNew.Birthday,
+                Enrolled = studentNew.Enrolled,
+                WaitingList = studentNew.WaitingList,
+                PaidDownPayment = studentNew.PaidDownPayment,
+                SubmissionDate = studentNew.SubmissionDate,
+                StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
             student.Location = User.Location;
@@ -68,6 +73,29 @@ namespace DuckDuck.Controllers
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
             return _studentRepository.GetAllStudents(roomId);
+        }
+
+        [HttpGet]
+        [Route("api/student/enrolled")]
+        public IEnumerable<Student> GetAllStudentsEnrolled()
+        {
+            var allStudents = _studentRepository.GetAllStudents();
+            var studentsEnrolled = allStudents.Where(x => x.Location == User.Location && x.Enrolled == true);
+            return studentsEnrolled;
+        }
+
+        [HttpGet]
+        [Route("api/student/waiting")]
+        public IEnumerable<Student> GetAllStudentsWaiting()
+        {
+            return _studentRepository.GetAllStudents().Where(x => x.Location == User.Location && x.WaitingList == true);
+        }
+
+        [HttpGet] 
+        [Route("api/student/waiting/{roomId}")] 
+        public IEnumerable<Student> GetAllStudentsWaiting(int roomId)
+        {
+            return _studentRepository.GetAllStudents(roomId).Where(x => x.Location == User.Location && x.WaitingList == true);
         }
 
         [HttpGet]

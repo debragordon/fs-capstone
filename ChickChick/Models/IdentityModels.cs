@@ -26,7 +26,6 @@ namespace DuckDuck.Models
 
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Student> Students { get; set; }
-        public DbSet<WaitingStudent> WaitingStudents { get; set; }
 
         public ApplicationDbContext()
             : base("DuckDuckApp", throwIfV1Schema: false)

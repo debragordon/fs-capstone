@@ -1,1 +1,11 @@
-﻿<div>ONE WAITING LIST</div>
+﻿<div>
+    <h3>{{student.FullName}}</h3>
+    <span class="mdl-list__item-primary-content">
+        <i class="material-icons mdl-list__item-icon chart-timeline"></i>
+        Room Waiting List {{student.Room.RoomName}}
+    </span>
+    <a type="button" class="button buttonBlack" ng-href="/students/update/{{student.Id}}">
+        EDIT
+        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+    </a>
+</div>

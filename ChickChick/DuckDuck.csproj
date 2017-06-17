@@ -265,13 +265,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Controllers\WaitingStudentController.cs" />
     <Compile Include="DAL\Interfaces\IRoomRepository.cs" />
     <Compile Include="DAL\Interfaces\IStudentRepository.cs" />
-    <Compile Include="DAL\Interfaces\IWaitingStudentRepository.cs" />
     <Compile Include="DAL\Repos\RoomRepository.cs" />
     <Compile Include="DAL\Repos\StudentRepository.cs" />
-    <Compile Include="DAL\Repos\WaitingStudentRepository.cs" />
     <Compile Include="DependencyResolution\DefaultRegistry.cs" />
     <Compile Include="DependencyResolution\IoC.cs" />
     <Compile Include="DependencyResolution\StructureMapDependencyScope.cs" />
@@ -281,29 +278,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706051756428_Round1.cs" />
-    <Compile Include="Migrations\201706051756428_Round1.Designer.cs">
-      <DependentUpon>201706051756428_Round1.cs</DependentUpon>
+    <Compile Include="Migrations\201706141825589_setup.cs" />
+    <Compile Include="Migrations\201706141825589_setup.Designer.cs">
+      <DependentUpon>201706141825589_setup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706051831027_Round2.cs" />
-    <Compile Include="Migrations\201706051831027_Round2.Designer.cs">
-      <DependentUpon>201706051831027_Round2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706060000255_Round3.cs" />
-    <Compile Include="Migrations\201706060000255_Round3.Designer.cs">
-      <DependentUpon>201706060000255_Round3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706070050240_upatedModels.cs" />
-    <Compile Include="Migrations\201706070050240_upatedModels.Designer.cs">
-      <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706101846339_setupDb.cs" />
-    <Compile Include="Migrations\201706101846339_setupDb.Designer.cs">
-      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706122305121_addLocationToStudent.cs" />
-    <Compile Include="Migrations\201706122305121_addLocationToStudent.Designer.cs">
-      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
+    <Compile Include="Migrations\201706142344514_Dates.cs" />
+    <Compile Include="Migrations\201706142344514_Dates.Designer.cs">
+      <DependentUpon>201706142344514_Dates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -311,7 +292,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Models\WaitingStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -343,26 +323,22 @@
     <Content Include="app\StudentStack\StudentFormUpdateController.js" />
     <Content Include="app\StudentStack\StudentList.html" />
     <Content Include="app\StudentStack\StudentListController.js" />
-    <Content Include="app\WaitingListStack\WaitingListDetail.html" />
-    <Content Include="app\WaitingListStack\WaitingListDetailController.js" />
-    <Content Include="app\WaitingListStack\WaitingListForm.html" />
-    <Content Include="app\WaitingListStack\WaitingListFormController.js" />
     <Content Include="app\WaitingListStack\WaitingListAll.html" />
     <Content Include="app\WaitingListStack\WaitingListAllController.js" />
+    <Content Include="app\WaitingListStack\WaitingListDetail.html" />
+    <Content Include="app\WaitingListStack\WaitingListDetailController.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
-    <Content Include="Content\angular-material.css" />
-    <Content Include="Content\angular-material.layout-attributes.css" />
-    <Content Include="Content\angular-material.layout-attributes.min.css" />
-    <Content Include="Content\angular-material.layouts.css" />
-    <Content Include="Content\angular-material.layouts.ie_fixes.css" />
-    <Content Include="Content\angular-material.layouts.min.css" />
-    <Content Include="Content\angular-material.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Login.css" />
+    <Content Include="Content\mdl-v1.1.2\material.css" />
+    <Content Include="Content\mdl-v1.1.2\material.js" />
+    <Content Include="Content\mdl-v1.1.2\material.min.css" />
+    <Content Include="Content\mdl-v1.1.2\material.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\baby.jpg" />
     <Content Include="Images\DuckDuck-logo-head-bw.png" />
     <Content Include="Images\DuckDuck-logo-head.png" />
     <Content Include="Images\DuckDuck-logo.jpg" />
@@ -371,9 +347,6 @@
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
     <Content Include="Scripts\angular-aria.min.js" />
-    <Content Include="Scripts\angular-material-mocks.js" />
-    <Content Include="Scripts\angular-material.js" />
-    <Content Include="Scripts\angular-material.min.js" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -407,6 +380,11 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
+    <Content Include="Content\mdl-v1.1.2\package.json" />
+    <Content Include="Content\mdl-v1.1.2\material.min.js.map" />
+    <Content Include="Content\mdl-v1.1.2\material.min.css.map" />
+    <Content Include="Content\mdl-v1.1.2\LICENSE" />
+    <Content Include="Content\mdl-v1.1.2\bower.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -446,23 +424,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706051756428_Round1.resx">
-      <DependentUpon>201706051756428_Round1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706141825589_setup.resx">
+      <DependentUpon>201706141825589_setup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706051831027_Round2.resx">
-      <DependentUpon>201706051831027_Round2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706060000255_Round3.resx">
-      <DependentUpon>201706060000255_Round3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706070050240_upatedModels.resx">
-      <DependentUpon>201706070050240_upatedModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706101846339_setupDb.resx">
-      <DependentUpon>201706101846339_setupDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706122305121_addLocationToStudent.resx">
-      <DependentUpon>201706122305121_addLocationToStudent.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706142344514_Dates.resx">
+      <DependentUpon>201706142344514_Dates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
