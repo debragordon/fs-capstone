@@ -1,14 +1,26 @@
 ﻿<div></div>
 
+<div>Number of Classrooms</div>
+<div>
+    <h1>{{totalRoomsCount()}}</h1>
+</div>
 <a type="button" class="button buttonBlack" ng-href="/classrooms">Classrooms
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 </a>
 
+<div>Number of Enrolled Students</div>
+<div>
+    <h1>{{totalEnrolledCount()}}</h1>
+</div>
 <a type="button" class="button buttonBlack" ng-href="/students">
     Students
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 </a>
 
+<div>Number of Students on Waiting List</div>
+<div>
+    <h1>{{totalWaitingCount()}}</h1>
+</div>
 <a type="button" class="button buttonBlack" ng-href="/waitinglists">
     Waiting Lists
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>

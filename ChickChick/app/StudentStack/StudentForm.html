@@ -13,38 +13,36 @@
         <label ng-show="!editing">Birthday</label>
     </div>
 
+
+
+    <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+        <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" ng-model="student.Enrolled">
+        <span class="mdl-checkbox__label">Currently Enrolled</span>
+    </label>
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2" ng-model="student.WaitingList">
+        <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+        <span class="mdl-checkbox__label">Waiting List</span>
+    </label>
+    
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2" ng-model="student.WaitingList">
+        <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" ng-model="student.PaidDownPayment">
+        <span class="mdl-checkbox__label">Paid Down Payment</span>
+    </label>
+
+
     <div class="group">
-        <div class="mdl-selectfield">
-            <label ng-show="!editing">Enrolled</label>
-            <select class="browser-default" ng-model="student.Enrolled">
-                <option value="" disabled selected>SELECT</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
+        <label ng-show="!editing">Currently Enrolled</label>
+        <input type="checkbox" name="waiting" value="waiting" ng-model="student.Enrolled">
     </div>
 
     <div class="group">
-        <div class="mdl-selectfield">
-            <label ng-show="!editing">Waiting List</label>
-            <select class="browser-default" ng-model="student.WaitingList">
-                <option value="" disabled selected>SELECT</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-        </div>
+        <label ng-show="!editing">Waiting List</label>
+        <input type="checkbox" name="waiting" value="waiting" ng-model="student.WaitingList">
     </div>
 
     <div class="group">
-        <div class="mdl-selectfield">
-            <label ng-show="!editing">Paid Down Payment</label>
-            <select class="browser-default" ng-model="student.PaidDownPayment">
-                <option value="" disabled selected>SELECT</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="no">NA</option>
-            </select>
-        </div>
+        <label ng-show="!editing">Paid Down Payment</label>
+        <input type="checkbox" name="waiting" value="waiting" ng-model="student.PaidDownPayment">
     </div>
 
     <div class="group">
@@ -54,7 +52,7 @@
                 <option value="" disabled selected>Choose Room</option>
             </select>
         </div>
-    </div>
+    </div>-->
 
     <!--<div class="group">
         <input type="date" ng-model="student.SubmissionDate"><span class="highlight"></span><span class="bar"></span>
@@ -64,6 +62,19 @@
         <input type="date" ng-model="student.StartDate"><span class="highlight"></span><span class="bar"></span>
         <label ng-show="!editing">Anticipated Start Date</label>
     </div>-->
+
+    <label>
+        Currently Enrolled:
+        <input type="checkbox" ng-model="student.Enrolled">
+    </label><br />
+    <label>
+        Waiting List:
+        <input type="checkbox" ng-model="student.WaitingList">
+    </label><br />
+    <label>
+        Paid Down Payment:
+        <input type="checkbox" ng-model="student.PaidDownPayment">
+    </label><br />
     <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addStudent(student)">
         ADD
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>

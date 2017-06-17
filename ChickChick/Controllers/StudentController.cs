@@ -76,6 +76,27 @@ namespace DuckDuck.Controllers
         }
 
         [HttpGet]
+        [Route("api/student/enrolled")]
+        public IEnumerable<Student> GetAllStudentsEnrolled()
+        {
+            return _studentRepository.GetAllStudents().Where(x => x.Location == User.Location && x.Enrolled == true);
+        }
+
+        [HttpGet]
+        [Route("api/student/waiting")]
+        public IEnumerable<Student> GetAllStudentsWaiting()
+        {
+            return _studentRepository.GetAllStudents().Where(x => x.Location == User.Location && x.WaitingList == true);
+        }
+
+        [HttpGet] 
+        [Route("api/student/waiting/{roomId}")] 
+        public IEnumerable<Student> GetAllStudentsWaiting(int roomId)
+        {
+            return _studentRepository.GetAllStudents(roomId).Where(x => x.Location == User.Location && x.WaitingList == true);
+        }
+
+        [HttpGet]
         [Route("api/student/{id}")]
         public Student GetSingleStudent(int id)
         {
