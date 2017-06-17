@@ -5,18 +5,27 @@
     $scope.enrolledStudents = {};
     $scope.waitingStudents = {};
 
-    $http.get('api/room')
+    var getAllRooms = function(){
+        $http.get('api/room')
         .then(function (res) {
             $scope.rooms = res.data;
+            console.log(res);
             $scope.totalRooms = $scope.rooms.length;
+            getAllEnrolledStudents();
         });
+    }
 
-    $http.get('api/student/enrolled')
+    getAllRooms();
+
+    var getAllEnrolledStudents = function () {
+        $http.get('api/student/enrolled')
         .then(function (res) {
             $scope.enrolledStudents = res.data;
             $scope.totalEnrolled = $scope.enrolledStudents.length;
-
+            getEnrolledPercentage();
         });
+    }
+
 
     $http.get('api/student/waiting')
     .then(function (res) {
@@ -24,5 +33,18 @@
         $scope.totalWaiting = $scope.waitingStudents.length;
     });
 
+   var getEnrolledPercentage = function () {
+       var occupancy = 0;
+       console.log("test");
+       console.log("rooms", $scope.rooms);
+        for (var i = 0; i < $scope.rooms.length; i++) {
+            console.log("beofre parse", $scope.rooms[i].OccupancyMax);
+
+            var temp = parseInt($scope.rooms[i].OccupancyMax);
+            occupancy += temp;
+        }
+        $scope.totalEnrolledPercentage = Math.round($scope.totalEnrolled / occupancy * 100);
+    }
+    
 }
 ]);

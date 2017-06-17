@@ -26,8 +26,13 @@ namespace DuckDuck.Controllers
         [Route("api/room")]
         public void AddNewRoom(Room roomNew)
         {
-            roomNew.Location = User.Location;
-            _roomRepository.AddNewRoom(roomNew);
+            var room = new Room
+            {
+                RoomName = roomNew.RoomName.ToUpper(),
+                OccupancyMax = roomNew.OccupancyMax,
+            };
+            room.Location = User.Location;
+            _roomRepository.AddNewRoom(room);
         }
 
         [HttpDelete]
