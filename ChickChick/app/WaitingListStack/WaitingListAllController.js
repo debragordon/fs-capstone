@@ -4,7 +4,7 @@
     $scope.students = {};
 
     var getStudents = function () {
-        $http.get('api/studentsOnAllWaitingLists') ////////
+        $http.get('api/student/waiting')
             .then(function (res) {
                 $scope.students = res.data;
             });

@@ -22,20 +22,11 @@ namespace DuckDuck
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/angular-material.css",
-                      "~/Content/angular-material.layout-attributes.css",
-                      "~/Content/angular-material.layouts.css",
-                      "~/Content/angular-material.layouts.ie_fixes.css",
-                      "~/Content/Site.css",
-                      "~/Content/Login.css"));
+                      "~/Content/Site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                     "~/Scripts/angular.js",
                     "~/Scripts/angular-route.js",
-                    "~/Scripts/angular-animate.js",
-                    "~/Scripts/angular-aria.js",
-                    "~/Scripts/angular-material.js",
-                    "~/Scripts/angular-mocks.js",
                     "~/app/app.js")
                 .IncludeDirectory("~/app", "*.js", true));
         }

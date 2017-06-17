@@ -29,7 +29,7 @@ namespace DuckDuck.Controllers
 
         [HttpPost]
         [Route("api/student")]
-        public void AddNewStudent(AddStudentViewModel studentNew)
+        public void AddNewStudent([FromBody]AddStudentViewModel studentNew)
         {
             var student = new Student
             {
@@ -38,8 +38,8 @@ namespace DuckDuck.Controllers
                 Enrolled = studentNew.Enrolled,
                 WaitingList = studentNew.WaitingList,
                 PaidDownPayment = studentNew.PaidDownPayment,
-                //SubmissionDate = studentNew.SubmissionDate,
-                //StartDate = studentNew.StartDate,
+                SubmissionDate = studentNew.SubmissionDate,
+                StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
             student.Location = User.Location;
@@ -79,7 +79,9 @@ namespace DuckDuck.Controllers
         [Route("api/student/enrolled")]
         public IEnumerable<Student> GetAllStudentsEnrolled()
         {
-            return _studentRepository.GetAllStudents().Where(x => x.Location == User.Location && x.Enrolled == true);
+            var allStudents = _studentRepository.GetAllStudents();
+            var studentsEnrolled = allStudents.Where(x => x.Location == User.Location && x.Enrolled == true);
+            return studentsEnrolled;
         }
 
         [HttpGet]
