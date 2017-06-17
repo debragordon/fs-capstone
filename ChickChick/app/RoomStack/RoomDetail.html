@@ -1,7 +1,5 @@
 ﻿<div>
     <h3>{{room.RoomName}}</h3>
-    <p>figure out current enrolled and populate with an anuglar variable</p>
-    <p>figure out room occupancy max and populate via angular</p>
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--6-col">
             <ul class="demo-list-icon mdl-list">
@@ -18,8 +16,8 @@
             </ul>
         </div>
     </div>
-    <a type="button" class="button buttonBlack" ng-href="//waitinglists/{{room.Id}}">
-        View Waiting List
+    <a type="button" class="button buttonBlack" ng-href="/waitinglists/{{room.Id}}">
+        VIEW ROOM WAITING LIST
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </a>    
     <a type="button" class="button buttonBlack" ng-href="/classrooms/update/{{room.Id}}">

@@ -15,7 +15,7 @@
     getRoom();
 
     var getStudents = function () {
-        $http.get(`api/student/waiting/${roomId}`)
+        $http.get(`api/student/waiting/${$scope.roomId}`)
             .then(function (res) {
                 $scope.students = res.data;
             });

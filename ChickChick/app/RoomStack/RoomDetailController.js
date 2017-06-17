@@ -16,7 +16,7 @@
     $scope.students = {};
 
     var getStudents = function () {
-        $http.get(`api/student/room/${$scope.roomId}`)
+        $http.get(`api/student/enrolled/${$scope.roomId}`)
         .then(function (res) {
             $scope.students = res.data;
         });

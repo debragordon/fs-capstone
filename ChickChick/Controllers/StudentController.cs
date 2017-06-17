@@ -33,13 +33,13 @@ namespace DuckDuck.Controllers
         {
             var student = new Student
             {
-                FullName = studentNew.FullName,
+                FullName = studentNew.FullName.ToUpper(),
                 Birthday = studentNew.Birthday,
                 Enrolled = studentNew.Enrolled,
                 WaitingList = studentNew.WaitingList,
                 PaidDownPayment = studentNew.PaidDownPayment,
-                SubmissionDate = studentNew.SubmissionDate,
-                StartDate = studentNew.StartDate,
+                //SubmissionDate = studentNew.SubmissionDate,
+                //StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
             student.Location = User.Location;
@@ -73,6 +73,13 @@ namespace DuckDuck.Controllers
         public IEnumerable<Student> GetAllStudents(int roomId)
         {
             return _studentRepository.GetAllStudents(roomId);
+        }
+
+        [HttpGet]
+        [Route("api/student/enrolled/{roomId}")]
+        public IEnumerable<Student> GetAllStudentsEnrolledInRoom(int roomId)
+        {
+            return _studentRepository.GetAllStudents(roomId).Where(x => x.Enrolled == true);
         }
 
         [HttpGet]

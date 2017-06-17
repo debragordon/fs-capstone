@@ -1,21 +1,25 @@
 ﻿<div></div>
 
 <div>
-    <h1>{{totalRooms}}</h1>
+    <h1>TOTAL ROOMS {{totalRooms}}</h1>
 </div>
 <a type="button" class="button buttonBlack" ng-href="/classrooms">View Classrooms
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 </a>
 
 <div>
-    <h1>{{totalEnrolled}}</h1>
+    <h1>NUMBER ENROLLED {{totalEnrolled}}</h1>
 </div>
 <a type="button" class="button buttonBlack" ng-href="/students">View Students
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
 </a>
 
 <div>
-    <h1>{{totalWaiting}}</h1>
+    <h1>Percent of Enrollment {{totalEnrolledPercentage}}%</h1>
+</div>
+
+<div>
+    <h1>NUMBER WAITING {{totalWaiting}}</h1>
 </div>
 <a type="button" class="button buttonBlack" ng-href="/waitinglists">View Waiting List
     <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
