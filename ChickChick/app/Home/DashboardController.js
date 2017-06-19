@@ -26,7 +26,6 @@
         });
     }
 
-
     $http.get('api/student/waiting')
     .then(function (res) {
         $scope.waitingStudents = res.data;
@@ -44,7 +43,19 @@
             occupancy += temp;
         }
         $scope.totalEnrolledPercentage = Math.round($scope.totalEnrolled / occupancy * 100);
-    }
+        calculateTotalMonthlyEnrollmentAmount();
+   }
+
+   var calculateTotalMonthlyEnrollmentAmount = function () {
+       var total = 0;
+       console.log("enrolled students", $scope.enrolledStudents);
+       for (var i = 0; i < $scope.enrolledStudents.length; i++) {
+
+           var oneRate = parseInt($scope.enrolledStudents[i].Rate);
+            total += oneRate;
+       }
+       $scope.rateTotal = total;
+   }
     
 }
 ]);

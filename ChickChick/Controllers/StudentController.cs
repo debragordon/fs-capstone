@@ -38,6 +38,7 @@ namespace DuckDuck.Controllers
                 Enrolled = studentNew.Enrolled,
                 WaitingList = studentNew.WaitingList,
                 PaidDownPayment = studentNew.PaidDownPayment,
+                Rate = studentNew.Rate,
                 //SubmissionDate = studentNew.SubmissionDate,
                 //StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
