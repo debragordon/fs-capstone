@@ -1,19 +1,26 @@
-﻿<a type="button" class="button buttonBlack" ng-href="/students/form">
-    Add New
-    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-</a>
+﻿<div class="container main" align="center">
+    <div><h1>Enrolled Students at Your Center</h1></div>
+    
+    <div class="row">
+        <div></div>
+        <a type="button" class="btn btn-secondary btn-lg btn-block cardLink" ng-href="/students/form"><h3 class="cardLink">Add Student <i class="fa fa-plus-square-o" aria-hidden="true"></i></h3></a>
+    </div>
 
-<div>
-    <ul class="demo-list-icon mdl-list">
-        <li class="mdl-list__item" ng-repeat="student in students">
-            <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                {{student.FullName}}
-            </span>
-            <a type="button" class="button buttonBlack" ng-href="/students/{{student.Id}}">
-                VIEW
-                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-            </a>
-        </li>
-    </ul>
+    <table class="table middle60">
+        <thead>
+            <tr>
+                <th>Full Name</th>
+                <th>Room</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="student in students">
+            <tr>
+                <td>{{student.FullName}}</td>
+                <td>{{student.Room.RoomName}}</td>
+                <td><a ng-href="/students/{{student.Id}}" class="cardLink">VIEW</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+

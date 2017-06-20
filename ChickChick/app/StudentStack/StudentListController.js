@@ -12,12 +12,16 @@
 
     getStudents();
 
-    $scope.deleteStudent = function (studentId) {
-        $http.delete(`api/student/${studentId}`)
-            .then(function (res) {
-                getStudents();
-            });
-    };
+    $scope.rooms = {};
+
+    var getRooms = function () {
+        $http.get('api/room')
+        .then(function (res) {
+            $scope.rooms = res.data;
+        });
+    }
+
+    getRooms();
 
 }
 ]);

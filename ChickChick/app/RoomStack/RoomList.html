@@ -1,6 +1,12 @@
 ﻿<div class="container main" align="center">
     <div><h1>Classrooms at Your Center</h1></div>
     <div class="row">
+        <div></div>
+        <a type="button" class="btn btn-secondary btn-lg btn-block cardLink" ng-href="/classrooms/form">
+            <h3 class="cardLink">Add Room <i class="fa fa-plus-square-o" aria-hidden="true"></i></h3>
+        </a>
+    </div>
+    <div class="row main">
         <div class="col-sm-2" ng-repeat="room in rooms">
             <div class="card card-inverse dashCard-classroomRoom">
                 <div class="card-block">
@@ -10,10 +16,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div></div>
-        <a type="button" class="btn btn-secondary btn-lg btn-block cardLink" ng-href="/classrooms/form">
-        <h3>Add Room +</h3></a>
-        
-    </div>
+
 </div>
