@@ -307,10 +307,7 @@
     <Content Include="app\Home\DashboardController.js" />
     <Content Include="app\Login\Login.html" />
     <Content Include="app\Login\LoginController.js" />
-    <Content Include="app\NavFooter\Footer.html" />
     <Content Include="app\NavFooter\NavController.js" />
-    <Content Include="app\NavFooter\Nav.html" />
-    <Content Include="app\NavFooter\FooterController.js" />
     <Content Include="app\Register\Register.html" />
     <Content Include="app\Register\RegisterController.js" />
     <Content Include="app\RoomStack\RoomDetail.html" />

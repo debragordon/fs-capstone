@@ -1,8 +1,5 @@
-﻿<div>
-    <hgroup>
-        <img src="../../Images/DuckDuck-logo.png" alt="DuckDuck" />
+﻿<!--<div>
 
-    </hgroup>
     <form>
         <div class="group">
             <input type="text" ng-model="email" ng-required><span class="highlight"></span><span class="bar"></span>
@@ -19,4 +16,42 @@
             <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
         </a>
     </form>
+</div>-->
+
+<div class="container body-content" align="center">
+    <div class="row">
+        <hgroup>
+            <img src="../../Images/DuckDuck-logo.png" alt="DuckDuck" />
+        </hgroup>
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label gray text-left">Email  </label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="email" ng-required class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label gray text-left">Password  </label>
+                    <div class="col-sm-9">
+                        <input type="password" ng-model="password" ng-required class="form-control">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" ng-click="login()">Login</button>
+                    <button type="button" class="btn btn-warning" ng-href="/register">Register</button>
+                </div>
+                <!--<div class="form-group row">
+                    <div class="offset-sm-2 col-sm-10">
+                        <button type="button" class="button" ng-click="login()">Login</button>
+                        <a type="button" class="button buttonOrange" ng-href="/register">Register</a>
+                    </div>
+                </div>-->
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
 </div>

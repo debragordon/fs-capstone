@@ -55,7 +55,7 @@
             total += oneRate;
        }
        $scope.rateTotal = total;
+       $scope.rateTotalYear = total * 52;
    }
-    
 }
 ]);

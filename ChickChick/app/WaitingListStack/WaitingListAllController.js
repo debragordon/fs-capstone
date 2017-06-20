@@ -12,5 +12,10 @@
 
     getStudents();
 
+    $scope.clear = function () {
+        document.getElementById("search").value = "";
+        $scope.searchText = "";
+    };
+
 }
 ]);
