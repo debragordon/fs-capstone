@@ -10,21 +10,6 @@ Create an online tool for the administrator of a daycare to manage their student
 
 C#, .NET, HTML5, JavaScript, Angular JS, SQL
 
-### Installation
+### Contributors
 
-Create a new repository and enter the following command:
-
-```sh
-$ git clone https://github.com/debragordon/fs-capstone.git
-```
-
-After opening the project in Visual studio, run the following command to install all dependencies in the nuget package manager console:
-
-```sh
-$ npm install
-```
-
-Now make sure that your database is up and running.
-
-Then, once this is done .....
-
+[Debra Gordon](http://github.com/debragordon)
