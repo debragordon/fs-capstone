@@ -2,20 +2,27 @@
     <div><h1>{{room.RoomName}}</h1></div>
     <div class="row">
         <div></div>
-        <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-href="/classrooms/update/{{room.Id}}"><h5 class="cardLink">Edit Room <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h5></a>
+        <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-href="/classrooms/update/{{room.Id}}"><h5 class="cardLink">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h5></a>
         <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-href="/waitinglists/{{room.Id}}"><h5 class="cardLink">View Waiting List <i class="fa fa-eye" aria-hidden="true"></i></h5></a>
-        <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-click="deleteRoom(room.Id)"><h5 class="cardLink">Delete Room <i class="fa fa-trash" aria-hidden="true"></i></h5></a>
+        <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-click="check=true"><h5 class="cardLink">Delete <i class="fa fa-trash" aria-hidden="true"></i></h5></a>
+    </div>
+    <div ng-show="check">
+        <p class="red">Are you sure?</p>
+        <button class="btn btn-success" ng-click="deleteRoom(student.Id)"><i class="fa fa-check-circle" aria-hidden="true"></i></button>
+        <button class="btn btn-danger" ng-click="check=false"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
     </div>
     <table class="table middle50">
         <thead>
             <tr>
                 <th>Full Name</th>
+                <th>View</th>
                 <th>Edit</th>
             </tr>
         </thead>
         <tbody ng-repeat="student in students">
             <tr>
                 <td>{{student.FullName}}</td>
+                <td><a ng-href="/students/{{student.Id}}" class="cardLink"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
                 <td><a ng-href="/students/{{student.Id}}" class="cardLink"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
             </tr>
         </tbody>

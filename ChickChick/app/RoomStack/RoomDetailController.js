@@ -25,6 +25,7 @@
     getStudents();
 
     $scope.deleteRoom = function () {
+        $scope.check = false;
         $http.delete(`api/room/${$scope.roomId}`)
             .then(function (res) {
                 getRoom();

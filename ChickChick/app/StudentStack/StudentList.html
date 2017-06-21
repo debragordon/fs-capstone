@@ -11,14 +11,14 @@
             <tr>
                 <th>Full Name</th>
                 <th>Room</th>
-                <th></th>
+                <th>View</th>
             </tr>
         </thead>
-        <tbody ng-repeat="student in students">
+        <tbody ng-repeat="student in students | orderBy: student.FullName">
             <tr>
                 <td>{{student.FullName}}</td>
                 <td>{{student.Room.RoomName}}</td>
-                <td><a ng-href="/students/{{student.Id}}" class="cardLink">VIEW</a></td>
+                <td><a ng-href="/students/{{student.Id}}" class="cardLink"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
             </tr>
         </tbody>
     </table>
