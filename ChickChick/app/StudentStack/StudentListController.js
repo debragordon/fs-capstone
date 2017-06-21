@@ -1,8 +1,8 @@
 ﻿app.controller("StudentListController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
     console.log("StudentListController connected");
 
-    $scope.students = {};
-
+    $scope.students = [];
+    $scope.sortProperty = "FullName";
     var getStudents = function () {
         $http.get('api/student/enrolled')
             .then(function (res) {
@@ -12,7 +12,7 @@
 
     getStudents();
 
-    $scope.rooms = {};
+    $scope.rooms = [];
 
     var getRooms = function () {
         $http.get('api/room')
@@ -22,6 +22,7 @@
     }
 
     getRooms();
+   
 
 }
 ]);

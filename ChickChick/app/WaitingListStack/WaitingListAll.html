@@ -9,13 +9,13 @@
     <table class="table middle60">
         <thead>
             <tr>
-                <th>Full Name</th>
-                <th>Room</th>
+                <th ng-click="sortProperty = 'FullName'">Full Name</th>
+                <th ng-click="sortProperty = 'Room.RoomName'">Room</th>
                 <th>View</th>
             </tr>
         </thead>
-        <tbody ng-repeat="student in students">
-            <tr>
+        <tbody>
+            <tr ng-repeat="student in students | orderBy: sortProperty">
                 <td>{{student.FullName}}</td>
                 <td>{{student.Room.RoomName}}</td>
                 <td><a ng-href="/students/{{student.Id}}" class="cardLink"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
