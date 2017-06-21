@@ -1,4 +1,66 @@
-﻿<form>
+﻿<div class="container main" align="center">
+    <div ng-show="!editing"><h1>Add A Student To Your Center</h1></div>
+    <div ng-show="editing"><h1>Edit A Student At Your Center</h1></div>
+    <div class="row">
+        <form>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Full Name</label>
+                <div class="col-10">
+                    <input class="form-control" type="text" value="FullName" placeholder="i.e. John Smith" ng-model="student.FullName" ng-required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="example-text-input" class="col-2 col-form-label">Birthday</label>
+                <div class="col-10">
+                    <input class="form-control" type="date" value="Birthday" ng-model="student.Birthday" ng-required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1">Weekly Rate</label>
+                <select class="form-control" id="exampleSelect1" ng-model="student.Rate">
+                    <option value="" disabled selected>Choose Rate</option>
+                    <option value="250">$250</option>
+                    <option value="240">$240</option>
+                    <option value="230">$230</option>
+                    <option value="220">$220</option>
+                    <option value="210">$210</option>
+                    <option value="200">$200</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1">Classroom</label>
+                <select class="form-control" id="exampleSelect1" ng-model="student.RoomId" ng-options="room.Id as room.RoomName for room in rooms">
+                    <option value="" disabled selected>Choose Room</option>
+                </select>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="student.Enrolled"> Currently Enrolled
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="student.WaitingList"> Waiting List
+                </label>
+            </div>
+
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" ng-model="student.PaidDownPayment"> Paid Down Payment
+                </label>
+            </div>
+
+            <button type="button" class="btn btn-primary" ng-show="!editing" ng-click="addStudent(student)">Add Student</button>
+            <button type="button" class="btn btn-primary" ng-show="editing" ng-click="saveStudent(student)">Save Student</button>
+        </form>
+    </div>
+</div>
+
+
+
+<!--<form>
     <div>Student Info Form</div>
     <div class="group">
         <input type="text" ng-model="student.FullName" ng-required />
@@ -48,22 +110,10 @@
             </select>
         </div>
     </div>
-
-    <!--<div class="group">
-        <input type="date" ng-model="student.SubmissionDate"><span class="highlight"></span><span class="bar"></span>
-        <label ng-show="!editing">Submission Date</label>
-    </div>
-    <div class="group">
-        <input type="date" ng-model="student.StartDate"><span class="highlight"></span><span class="bar"></span>
-        <label ng-show="!editing">Anticipated Start Date</label>
-    </div>-->
-
     <button type="button" class="button buttonBlack" ng-show="!editing" ng-click="addStudent(student)">
         ADD
-        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </button>
     <button type="button" class="button buttonBlack" ng-show="editing" ng-click="saveStudent(student)">
         SAVE
-        <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </button>
-</form>
+</form>-->
