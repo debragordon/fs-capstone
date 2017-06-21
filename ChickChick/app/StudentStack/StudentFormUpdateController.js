@@ -1,6 +1,4 @@
 ﻿app.controller("StudentFormUpdateController", ["$scope", "$http", "$location", "$routeParams", function ($scope, $http, $location, $routeParams) {
-    console.log("StudentFormUpdateController connected");
-
     $scope.editing = true;
     $scope.studentId = $routeParams.id;
     $scope.rooms = [];
@@ -17,7 +15,6 @@
             var dt = new Date(res.data.Birthday);
             res.data.Birthday = dt;
             $scope.student = res.data;            
-            console.log($scope.student);
         });
     }
     getStudent();

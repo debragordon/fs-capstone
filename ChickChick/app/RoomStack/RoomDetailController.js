@@ -1,6 +1,4 @@
 ﻿app.controller("RoomDetailController", ["$scope", "$http", "$location", "$routeParams", function ($scope, $http, $location, $routeParams) {
-    console.log("RoomDetailController connected");
-
     $scope.room = {};
     $scope.roomId = $routeParams.id;
 
@@ -10,18 +8,15 @@
             $scope.room = res.data;
         });
     }
-
     getRoom();
 
     $scope.students = {};
-
     var getStudents = function () {
         $http.get(`api/student/enrolled/${$scope.roomId}`)
         .then(function (res) {
             $scope.students = res.data;
         });
     }
-
     getStudents();
 
     $scope.deleteRoom = function () {

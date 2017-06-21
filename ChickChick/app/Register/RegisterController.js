@@ -1,7 +1,5 @@
 ﻿app.controller("RegisterController", ["$scope", "$http", "$location", "$rootScope", function ($scope, $http, $location, $rootScope) {
-        console.log("Register controller connected");
         $scope.newUser = {};
-
         $scope.registerNew = function () {
             $http({
                     method: 'POST',
@@ -14,7 +12,6 @@
                     }
                 })
                 .then(function (result) {
-                    console.log("result", result);
                     $location.path("/login");
                 });
         }

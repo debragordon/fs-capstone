@@ -333,10 +333,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Login.css" />
-    <Content Include="Content\mdl-v1.1.2\material.css" />
-    <Content Include="Content\mdl-v1.1.2\material.js" />
-    <Content Include="Content\mdl-v1.1.2\material.min.css" />
-    <Content Include="Content\mdl-v1.1.2\material.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -382,11 +378,6 @@
     <Content Include="Scripts\angular-route.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
-    <Content Include="Content\mdl-v1.1.2\package.json" />
-    <Content Include="Content\mdl-v1.1.2\material.min.js.map" />
-    <Content Include="Content\mdl-v1.1.2\material.min.css.map" />
-    <Content Include="Content\mdl-v1.1.2\LICENSE" />
-    <Content Include="Content\mdl-v1.1.2\bower.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

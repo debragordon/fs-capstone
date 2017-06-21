@@ -22,7 +22,6 @@ app.run(($rootScope, $location, $http) => {
 
     if (token)
         $http.defaults.headers.common['Authorization'] = `bearer ${token}`;
-
 });
 
 
