@@ -9,6 +9,9 @@
         .then(function (res) {
             $scope.student = res.data;
             $scope.student.calculatedAge = calculateAge(res.data.Birthday);
+            $scope.student.formattedBirthdate = moment(res.data.Birthday).format("MMM Do YYYY");
+
+            $scope.student.ageInMonths = moment(res.data.Birthday).fromNow().slice(0, -3);
         });
     }
 
@@ -21,11 +24,12 @@
     }
 
     $scope.deleteStudent = function () {
+        $scope.check = false;
         $http.delete(`api/student/${$scope.studentId}`)
-            .then(function (res) {
-                getStudent();
-                $location.path("/students");
-            });
+        .then(function (res) {
+            $location.path("/students");
+        });
+
     };
 }
 ]);

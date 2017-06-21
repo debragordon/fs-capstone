@@ -1,8 +1,8 @@
 ﻿app.controller("StudentListController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
     console.log("StudentListController connected");
 
-    $scope.students = {};
-
+    $scope.students = [];
+    $scope.sortProperty = "FullName";
     var getStudents = function () {
         $http.get('api/student/enrolled')
             .then(function (res) {
@@ -12,12 +12,17 @@
 
     getStudents();
 
-    $scope.deleteStudent = function (studentId) {
-        $http.delete(`api/student/${studentId}`)
-            .then(function (res) {
-                getStudents();
-            });
-    };
+    $scope.rooms = [];
+
+    var getRooms = function () {
+        $http.get('api/room')
+        .then(function (res) {
+            $scope.rooms = res.data;
+        });
+    }
+
+    getRooms();
+   
 
 }
 ]);

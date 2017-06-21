@@ -38,6 +38,7 @@ namespace DuckDuck.Controllers
                 Enrolled = studentNew.Enrolled,
                 WaitingList = studentNew.WaitingList,
                 PaidDownPayment = studentNew.PaidDownPayment,
+                Rate = studentNew.Rate,
                 //SubmissionDate = studentNew.SubmissionDate,
                 //StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
@@ -46,19 +47,31 @@ namespace DuckDuck.Controllers
             _studentRepository.AddNewStudent(student);
         }
 
+        [HttpPut]
+        [Route("api/student")]
+        public void EditStudent([FromBody]UpdateStudentViewModel studentEdit)
+        {
+            var student = _studentRepository.GetSingleStudent(studentEdit.Id);
+
+            student.FullName = studentEdit.FullName.ToUpper();
+            student.Birthday = studentEdit.Birthday;
+            student.Enrolled = studentEdit.Enrolled;
+            student.WaitingList = studentEdit.WaitingList;
+            student.PaidDownPayment = studentEdit.PaidDownPayment;
+            student.Rate = studentEdit.Rate;
+            //SubmissionDate = studentNew.SubmissionDate,
+            //StartDate = studentNew.StartDate,
+            student.Room = _roomRepository.GetSingleRoom(studentEdit.RoomId);
+            student.Location = User.Location;
+
+            _studentRepository.EditStudent(student);
+        }
+
         [HttpDelete]
         [Route("api/student/{id}")]
         public void DeleteSingleStudent(int id)
         {
             _studentRepository.DeleteSingleStudent(id);
-        }
-
-        [HttpPut]
-        [Route("api/student")]
-        public void EditStudent(Student studentEdit)
-        {
-            studentEdit.Location = User.Location;
-            _studentRepository.EditStudent(studentEdit);
         }
 
         [HttpGet]

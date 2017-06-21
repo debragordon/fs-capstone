@@ -1,4 +1,33 @@
-﻿<div>
+﻿<div class="container main" align="center">
+    <div><i class="fa fa-user fa-5x" aria-hidden="true"></i></div>
+    <div><h1>{{student.FullName}}</h1></div>
+    <div class="row">
+        <div class="card">
+            <div class="card-block">
+                <h4 class="card-title" ng-show="student.calculatedAge >= 1">Current Age: {{student.calculatedAge}}</h4>
+                <h4 class="card-title" ng-show="student.calculatedAge < 1">Current Age: {{student.ageInMonths}}</h4>
+                <h5>Birthday: {{student.formattedBirthdate}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Classroom: {{student.Room.RoomName}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Location: {{student.Location}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted" ng-show="student.Enrolled && !student.WaitingList">Currently Enrolled: Yes</h6>
+                <h6 class="card-subtitle mb-2 text-muted" ng-show="!student.Enrolled && student.WaitingList">Currently Waiting: Yes</h6>
+                <h6 class="card-subtitle mb-2 text-muted" ng-show="!student.Enrolled && student.WaitingList && student.PaidDownPayment">Paid Down Payment: Yes</h6>
+                <h6 class="card-subtitle mb-2 text-muted" ng-show="!student.Enrolled && student.WaitingList && !student.PaidDownPayment">Paid Down Payment: No</h6>
+                <p class="card-text">Currently Weekly Rate: ${{student.Rate}}</p>
+                <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-href="/students/update/{{student.Id}}"><h5 class="cardLink">Edit <i class="fa fa-pencil-square-o" aria-hidden="true"></i></h5></a>
+                <a type="button" class="btn btn-secondary d-inline-block cardLink" ng-click="check=true"><h5 class="cardLink">Delete <i class="fa fa-trash" aria-hidden="true"></i></h5></a>
+            </div>
+            <div ng-show="check">
+                <p class="red">Are you sure?</p>
+                <button class="btn btn-success" ng-click="deleteStudent(student.Id)"><i class="fa fa-check-circle" aria-hidden="true"></i></button>
+                <button class="btn btn-danger" ng-click="check=false"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--<div>
     <h3>{{student.FullName}}</h3>
     <span class="mdl-list__item-primary-content">
         <i class="material-icons mdl-list__item-icon chart-timeline"></i>
@@ -17,4 +46,4 @@
         DELETE
         <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
     </a>
-</div>
+</div>-->

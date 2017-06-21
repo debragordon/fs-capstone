@@ -2,8 +2,9 @@
 
 namespace DuckDuck.Controllers
 {
-    public class AddStudentViewModel
+    public class UpdateStudentViewModel
     {
+        public int Id { get; set; }
         public DateTime Birthday { get; set; }
         public bool Enrolled { get; set; }
         public string FullName { get; set; }

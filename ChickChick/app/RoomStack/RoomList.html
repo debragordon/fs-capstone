@@ -1,19 +1,20 @@
-﻿<a type="button" class="button buttonBlack" ng-href="/classrooms/form">
-    Add New
-    <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-</a>
+﻿<div class="container main" align="center">
+    <div><h1>Classrooms at Your Center</h1></div>
+    <div class="row">
+        <div></div>
+        <a type="button" class="btn btn-secondary btn-lg btn-block cardLink" ng-href="/classrooms/form">
+            <h3 class="cardLink">Add Room <i class="fa fa-plus-square-o" aria-hidden="true"></i></h3>
+        </a>
+    </div>
+    <div class="row main">
+        <div class="col-sm-2" ng-repeat="room in rooms">
+            <div class="card card-inverse dashCard-classroomRoom">
+                <div class="card-block">
+                    <h2 class="card-title roomName">{{room.RoomName}}</h2>
+                    <a ng-href="/classrooms/{{room.Id}}" class="cardLink">View Room</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div>
-    <ul class="demo-list-icon mdl-list" >
-        <li class="mdl-list__item" ng-repeat="room in rooms">
-            <span class="mdl-list__item-primary-content">
-                <i class="material-icons mdl-list__item-icon chart-timeline"></i>
-                {{room.RoomName}}
-            </span>
-            <a type="button" class="button buttonBlack" ng-href="/classrooms/{{room.Id}}">
-                VIEW
-                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-            </a>
-        </li>
-    </ul>
 </div>

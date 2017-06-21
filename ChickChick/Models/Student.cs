@@ -20,5 +20,6 @@ namespace DuckDuck.Models
         public bool PaidDownPayment { get; set; }
         public DateTime? SubmissionDate { get; set; }
         public DateTime? StartDate { get; set; }
+        public int Rate { get; set; }
     }
 }

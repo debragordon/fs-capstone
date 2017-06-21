@@ -264,6 +264,7 @@
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\UpdateStudentViewModel.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\Interfaces\IRoomRepository.cs" />
     <Compile Include="DAL\Interfaces\IStudentRepository.cs" />
@@ -286,6 +287,10 @@
     <Compile Include="Migrations\201706142344514_Dates.Designer.cs">
       <DependentUpon>201706142344514_Dates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706191700070_addedRate.cs" />
+    <Compile Include="Migrations\201706191700070_addedRate.Designer.cs">
+      <DependentUpon>201706191700070_addedRate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -303,10 +308,7 @@
     <Content Include="app\Home\DashboardController.js" />
     <Content Include="app\Login\Login.html" />
     <Content Include="app\Login\LoginController.js" />
-    <Content Include="app\NavFooter\Footer.html" />
     <Content Include="app\NavFooter\NavController.js" />
-    <Content Include="app\NavFooter\Nav.html" />
-    <Content Include="app\NavFooter\FooterController.js" />
     <Content Include="app\Register\Register.html" />
     <Content Include="app\Register\RegisterController.js" />
     <Content Include="app\RoomStack\RoomDetail.html" />
@@ -429,6 +431,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706142344514_Dates.resx">
       <DependentUpon>201706142344514_Dates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706191700070_addedRate.resx">
+      <DependentUpon>201706191700070_addedRate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

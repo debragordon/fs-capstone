@@ -33,6 +33,7 @@ namespace DuckDuck.DAL.Repos
 
         public void EditStudent(Student studentEdit)
         {
+            
             _context.Students.AddOrUpdate(studentEdit);
             _context.SaveChanges();
         }
