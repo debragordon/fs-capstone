@@ -1,6 +1,4 @@
 ﻿app.controller("DashboardController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
-    console.log("DashboardController connected");
-
     $scope.rooms = {};
     $scope.enrolledStudents = {};
     $scope.waitingStudents = {};
@@ -9,12 +7,10 @@
         $http.get('api/room')
         .then(function (res) {
             $scope.rooms = res.data;
-            console.log(res);
             $scope.totalRooms = $scope.rooms.length;
             getAllEnrolledStudents();
         });
     }
-
     getAllRooms();
 
     var getAllEnrolledStudents = function () {
@@ -34,11 +30,7 @@
 
    var getEnrolledPercentage = function () {
        var occupancy = 0;
-       console.log("test");
-       console.log("rooms", $scope.rooms);
         for (var i = 0; i < $scope.rooms.length; i++) {
-            console.log("beofre parse", $scope.rooms[i].OccupancyMax);
-
             var temp = parseInt($scope.rooms[i].OccupancyMax);
             occupancy += temp;
         }
@@ -48,9 +40,7 @@
 
    var calculateTotalMonthlyEnrollmentAmount = function () {
        var total = 0;
-       console.log("enrolled students", $scope.enrolledStudents);
        for (var i = 0; i < $scope.enrolledStudents.length; i++) {
-
            var oneRate = parseInt($scope.enrolledStudents[i].Rate);
             total += oneRate;
        }

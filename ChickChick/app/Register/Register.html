@@ -1,28 +1,38 @@
-﻿<div>
-    <hgroup>
-        <h1>DuckDuck</h1>
-        <h3>Sign Up</h3>
-    </hgroup>
-    <form>
-        <div class="group">
-            <input type="text" ng-model="newUser.email" ng-required><span class="highlight"></span><span class="bar"></span>
-            <label>Email</label>
+﻿<div class="container body-content" align="center">
+    <div class="row">
+        <img src="../../Images/DuckDuck-logo.png" alt="DuckDuck" />
+    </div>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label gray text-left">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="newUser.email" ng-required class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label gray text-left">Childcare Center Location Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" ng-model="newUser.location" ng-required class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label gray text-left">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" ng-model="newUser.password" ng-required class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3 col-form-label gray text-left">Confirm Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" ng-model="newUser.passwordConfirm" ng-required class="form-control">
+                    </div>
+                </div>
+                <button type="button" class="btn btn-warning" ng-click="registerNew(newUser)">Register/SignIn</button>
+            </form>
         </div>
-        <div class="group">
-            <input type="text" ng-model="newUser.location" ng-required><span class="highlight"></span><span class="bar"></span>
-            <label>Childcare Center Location Name</label>
-        </div>
-        <div class="group">
-            <input type="password" ng-model="newUser.password" ng-required><span class="highlight"></span><span class="bar"></span>
-            <label>Password</label>
-        </div>
-        <div class="group">
-            <input type="password" ng-model="newUser.passwordConfirm" ng-required><span class="highlight"></span><span class="bar"></span>
-            <label>Password Confirm</label>
-        </div>
-        <button type="button" class="button buttonBlack" ng-click="registerNew(newUser)">
-            Register/SignIn
-            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
-        </button>
-    </form>
+        <div class="col-sm-4"></div>
+    </div>
 </div>

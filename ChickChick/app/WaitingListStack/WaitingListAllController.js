@@ -1,6 +1,4 @@
 ﻿app.controller("WaitingListAllController", ["$scope", "$http", "$location", function ($scope, $http, $location) {
-    console.log("WaitingListAllController connected");
-
     $scope.students = [];
     $scope.sortProperty = "FullName";
 
@@ -10,13 +8,6 @@
                 $scope.students = res.data;
             });
     }
-
     getStudents();
-
-    $scope.clear = function () {
-        document.getElementById("search").value = "";
-        $scope.searchText = "";
-    };
-
 }
 ]);

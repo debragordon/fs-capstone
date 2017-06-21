@@ -1,6 +1,4 @@
 ﻿app.controller("StudentDetailController", ["$scope", "$http", "$location", "$routeParams", function ($scope, $http, $location, $routeParams) {
-    console.log("StudentDetailController connected");
-
     $scope.student = {};
     $scope.studentId = $routeParams.id;
     
@@ -10,11 +8,9 @@
             $scope.student = res.data;
             $scope.student.calculatedAge = calculateAge(res.data.Birthday);
             $scope.student.formattedBirthdate = moment(res.data.Birthday).format("MMM Do YYYY");
-
             $scope.student.ageInMonths = moment(res.data.Birthday).fromNow().slice(0, -3);
         });
     }
-
     getStudent();
 
     var calculateAge = function calculateAge(birthdayToConvert) {
@@ -29,7 +25,6 @@
         .then(function (res) {
             $location.path("/students");
         });
-
     };
 }
 ]);

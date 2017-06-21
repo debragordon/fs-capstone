@@ -39,8 +39,6 @@ namespace DuckDuck.Controllers
                 WaitingList = studentNew.WaitingList,
                 PaidDownPayment = studentNew.PaidDownPayment,
                 Rate = studentNew.Rate,
-                //SubmissionDate = studentNew.SubmissionDate,
-                //StartDate = studentNew.StartDate,
                 Room = _roomRepository.GetSingleRoom(studentNew.RoomId)
             };
             student.Location = User.Location;
@@ -59,11 +57,8 @@ namespace DuckDuck.Controllers
             student.WaitingList = studentEdit.WaitingList;
             student.PaidDownPayment = studentEdit.PaidDownPayment;
             student.Rate = studentEdit.Rate;
-            //SubmissionDate = studentNew.SubmissionDate,
-            //StartDate = studentNew.StartDate,
             student.Room = _roomRepository.GetSingleRoom(studentEdit.RoomId);
             student.Location = User.Location;
-
             _studentRepository.EditStudent(student);
         }
 
